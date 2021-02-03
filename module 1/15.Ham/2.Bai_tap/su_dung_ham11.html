@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sudungham</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt());
+    let b = parseInt(prompt());
+    let c = parseInt(prompt());
+    function minmax() {
+        if (a < b ) {
+            if ( a < c){
+                alert(a+ "so ban nhap la so nho nhat");
+            } else if (b < a && b < c) {
+                alert(b +"so ban nhap la so nho nhat");
+            }else if (c < b){
+                alert( c +"so ban nhap la so nho nhat")
+            }else if (b < c){
+                alert(b+ "so ban nhap la so nho nhat")
+            }else if (a < c){
+                alert(a + "la so nho nhat")
+            }else if (c < a){
+                alert(c + "la so nho nhat")
+            }
+            }
+
+    }
+    minmax();
+</script>
+</body>
+</html>

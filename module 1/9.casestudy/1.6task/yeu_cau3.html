@@ -1,0 +1,86 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Validate Email</title>
+    <script type="text/javascript">
+        function checkEmail() {
+            let email = document.getElementById('email');
+            let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (!filter.test(email.value)) {
+                alert('Hay nhap dia chi email hop le.\nExample@gmail.com');
+                email.focus;
+                return false;
+            } else {
+                alert('OK roi day, Email nay hop le.');
+            }
+        }
+        function checkCmnd() {
+            let cmnd = document.getElementById('cmnd');
+            let filter1 = /^[\d]{8,8}$/;
+                if (!filter1.test(cmnd.value)){
+                    alert("cmnd khong hop le. moi nhap lai");
+                    cmnd.focus;
+                    return false;
+                }else {
+                    alert("ban da nhap dung cmnd")
+                }
+        }
+        function checkBirthday() {
+            let birthday = document.getElementById('birthday');
+            let filter2 = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+            if (!filter2.test(birthday.value)){
+                alert("ban nhap ngay sinh sai dinh dang , moi ban nhap lai");
+                birthday.focus;
+                return false;
+            }else {
+                alert("ban da nhap dung dinh dang")
+            }
+        }
+        function checkRenday() {
+            let check = false;
+        let renday = document.getElementById('renday').value;
+        do {
+            if (!isNaN(renday)){
+                renday=Number.parseFloat(renday);
+                if (Number.isInteger(renday)){
+                    check = true;
+                    alert("ban da nhap dung dinh dang renday");
+                    break;
+                }
+            }
+            if (!check){
+                alert("renday khong phai la so nguyen duong ,moi ban nhap lai");
+                break;
+            }
+        }while (!check);
+            check = false ;
+        }
+        let tempName = "";
+        let name = prompt("Nhap ten:");
+        name = name.trim().toLowerCase();
+        for (let i = 0 ; i < name.length; i++){
+            if (name.charAt(i)=== " " && name.charAt(i+1)=== " "){
+                continue;
+            }
+            if (i ===0 || name.charAt(i-1)===" "){
+                tempName+=name.charAt(i).toUpperCase();
+                continue;
+            }
+            tempName +=name.charAt(i);
+        }
+        alert(tempName)
+    </script>
+</head>
+<body>
+<form name="form1" id="form1" method="post">
+    <input type="text" name="email" id="email" size="40">
+    <input type="button" name="check" value="CheckEmail" onclick="checkEmail();">
+    <input type="text" name="Cmnd" id="cmnd" size="40">
+    <input type="button" name="check" value="CheckCmnd" onclick="checkCmnd();">
+    <input type="text" name="birthday" id="birthday" size="40" >
+    <input type="button" name="check" value="checkBirthday" onclick="checkBirthday()">
+    <input type="text" name="renday" id="renday" size="40">
+    <input type="button" name="check" value="CheckRenday" onclick="checkRenday()">
+</form>
+</body>
+</html>

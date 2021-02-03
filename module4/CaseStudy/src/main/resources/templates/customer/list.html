@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <style>
+        body{
+            background-image: url("img/backgroud.jpg");
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline" action="/customer/listCustomer">
+        <input class="form-control mr-sm-2" type="search" th:name="nameSearch" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+<h3 th:if="${successMsg}" th:text="${successMsg}" style="color: red"></h3>
+<!--<p>-->
+<!--    <a th:href="@{/customer/create}">-->
+<!--        Add new Customer-->
+<!--    </a>-->
+<!--</p>-->
+<a th:href="@{/customer/create}">
+    <button type="button" class="btn btn-primary">Add News Customer</button>
+</a>
+<a th:href="@{/customer/home}"><button>BACK TO HOME</button></a>
+
+<table style="width: 100% ; background-color: #343a40 ; color: white" class="table table-striped" border="1">
+    <thead>
+    <tr>
+        <th>Customer Id</th>
+        <th>Customer Type Id</th>
+        <th>Customer Name</th>
+        <th>Customer Birthday</th>
+        <th>Customer Gender</th>
+        <th>Customer Id Card</th>
+        <th>Customer Phone</th>
+        <th>Customer Email</th>
+        <th>Customer Address</th>
+        <th colspan="2">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer:${customerList}">
+        <td th:text="${customer.customerId}"></td>
+        <td th:text="${customer.customerType.customerTypeName}"></td>
+        <td th:text="${customer.customerName}"></td>
+        <td th:text="${customer.customerBirthday}">
+        <td th:text="${customer.customerGender}">
+        <td th:text="${customer.customerIdCard}">
+        <td th:text="${customer.customerPhone}">
+        <td th:text="${customer.customerEmail}">
+        <td th:text="${customer.customerAddress}">
+        </td>
+        <td>
+            <a class="btn btn-outline-primary" th:href="@{/customer/edit/{id}(id=${customer.customerId})}">Edit</a>
+        </td>
+        <td>
+            <button data-toggle="modal" th:data-target="'#a'+${customer.getCustomerId()}" class="btn btn-outline-danger">
+                Delete
+            </button>
+            <div class="modal fade" th:id="'a'+${customer.getCustomerId()}" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="color: black">
+                            Do you want to delete <p th:text="${customer.customerName}"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                           <a th:href="@{/customer/delete/{id}(id=${customer.customerId})}"><button type="button" class="btn btn-primary">Delete</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div class="notify" style="color:red;">
+    <div th:if="${messages}"><span th:text="${messages}"></span></div>
+</div>
+<div>
+    <a class="btn btn-dark"
+       th:href="@{'/customer/listCustomer'(page=${customerList.number - 1},keyword = ${nameSearchAfterSearch})}"
+       th:if="${customerList.hasPrevious()}">Previous</a>
+    <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
+    <a class="btn btn-dark"
+       th:href="@{'/customer/listCustomer'(page=${customerList.number + 1},keyword = ${nameSearchAfterSearch})}"
+       th:if="${customerList.hasNext()}">Next</a>
+</div>
+
+<!--<button type="button" class="btn btn-primary btn-lg" id="btnModalCreate">-->
+<!--    Create Customer-->
+<!--</button>-->
+<!--modal ajax-->
+<!--<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">-->
+<!--    <div class="modal-dialog" role="document">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--                <h5 class="modal-title">Modal title</h5>-->
+<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                    <span aria-hidden="true">&times;</span>-->
+<!--                </button>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--                Body-->
+<!--            </div>-->
+<!--            <div class="modal-footer">-->
+<!--                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->
+<!--&lt;!&ndash;                <button type="button" class="btn btn-primary">Save</button>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"-->
+<!--        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"-->
+<!--        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"-->
+<!--        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"-->
+<!--        crossorigin="anonymous"></script>-->
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

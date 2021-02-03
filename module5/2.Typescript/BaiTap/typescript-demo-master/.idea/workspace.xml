@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="08e659d9-0160-40fd-be5f-e0a814629a36" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../1.UX_UI/BaiTap/Newsletter/ColoSchemeForNewsletter.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../1.UX_UI/BaiTap/Simplify your life/BuildLandingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../1.UX_UI/BaiTap/Simplify your life/BuildLandingPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/browserslist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/e2e/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/e2e/src/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/e2e/src/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/tslint.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1nxZTAku6LZyvgTCJLT3MuxQDu5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.." />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:50870/typescript-demo-master/typescript-demo-master/src/exercise/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="08e659d9-0160-40fd-be5f-e0a814629a36" name="Default Changelist" comment="" />
+      <created>1612333707952</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612333707952</updated>
+      <workItem from="1612333709086" duration="1040000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="420" y="100" key="FileChooserDialogImpl" timestamp="1612334748409">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="420" y="100" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1612334748409" />
+  </component>
+</project>

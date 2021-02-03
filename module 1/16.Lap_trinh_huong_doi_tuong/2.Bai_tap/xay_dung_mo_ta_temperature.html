@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyendoinhiietdo</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(C,F,K) {
+            this.C = C ;
+            this.F = F ;
+            this.K = K ;
+        }
+        getC(){
+            return (this.C *18)+32 ;
+        }
+        getF(){
+            return (this.F -32)/18;
+        }
+        getK(){
+            return (this.K + 273);
+        }
+    }
+    let a =parseInt(prompt("nhap a"));
+    let b = parseInt(prompt("nhap b"));
+    let c = parseInt(prompt("nhap c"))
+    let temperature1 = new Temperature(a,b,c);
+    alert(temperature1.getC());
+    alert(temperature1.getF());
+    alert(temperature1.getK());
+</script>
+</body>
+</html>

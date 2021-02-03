@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Form</title>
+</head>
+<body>
+<form th:object="${user}" th:action="@{/validateUser}" method="post" >
+    <table>
+        <tr>
+            <td>User:</td>
+            <td><input th:field="*{user}"></td>
+            <td th:if="${#fields.hasErrors('user')}" th:errors="*{user}">Name Error</td>
+        </tr>
+        <tr>
+            <td>PassWord:</td>
+            <td><input th:field="*{password}"></td>
+            <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Name Error</td>
+        </tr>
+
+        <tr>
+            <td>Birthday:</td>
+            <td><input th:field="*{age}"></td>
+            <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Name Error</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input th:field="*{email}"></td>
+            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Submit</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

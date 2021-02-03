@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <style>
+        body{
+            background-image: url("img/backgroud.jpg");
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline" action="/customer/listCustomer">
+        <input class="form-control mr-sm-2" type="search" th:name="nameSearch" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+<a th:href="@{/employee/createEmployee}">
+    <button type="button" class="btn btn-primary">Add News Employee</button>
+</a>
+<a th:href="@{/customer/home}"><button>BACK TO HOME</button></a>
+<table style="width: 100% ; background-color: #343a40 ; color: white" class="table table-striped" border="1">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Employee Name</th>
+        <th>Employee Birthday</th>
+        <th>Employee Id Card</th>
+        <th>Employee Salary</th>
+        <th>Employee Phone</th>
+        <th>Employee Email</th>
+        <th>Employee Address</th>
+        <th>Position name</th>
+        <th>Education Degree</th>
+        <th>Division</th>
+        <th>User</th>
+        <th colspan="2">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee:${listEmployee}">
+        <td th:text="${employee.employeeId}"></td>
+        <td th:text="${employee.employeeName}"></td>
+        <td th:text="${employee.employeeBirthday}"></td>
+        <td th:text="${employee.employeeIdCard}">
+        <td th:text="${employee.employeeSalary}">
+        <td th:text="${employee.employeePhone}">
+        <td th:text="${employee.employeeEmail}">
+        <td th:text="${employee.employeeAddress}">
+        <td th:text="${employee.position.positionName}">
+        <td th:text="${employee.education_degree.educationDegreeName}">
+        <td th:text="${employee.division.divisionName}">
+        <td th:text="${employee.user.username}">
+        </td>
+        <td>
+            <a class="btn btn-outline-primary" th:href="@{/employee/edit/{id}(id=${employee.employeeId})}">Edit</a>
+        </td>
+        <td>
+            <button data-toggle="modal" th:data-target="'#a'+${employee.getEmployeeId()}" class="btn btn-outline-danger">
+                Delete
+            </button>
+            <div class="modal fade" th:id="'a'+${employee.getEmployeeId()}" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModal3Label">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="color: black">
+                            Do you want to delete <p th:text="${employee.employeeName}"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a th:href="@{/employee/delete/{id}(id=${employee.employeeId})}"><button type="button" class="btn btn-primary">Delete</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div>
+    <a class="btn btn-dark"
+       th:href="@{'/customer/listCustomer'(page=${listEmployee.number - 1},keyword = ${nameSearchAfterSearch})}"
+       th:if="${listEmployee.hasPrevious()}">Previous</a>
+    <span th:text="${listEmployee.number + 1}"></span>/<span th:text="${listEmployee.totalPages}"></span>
+    <a class="btn btn-dark"
+       th:href="@{'/customer/listCustomer'(page=${listEmployee.number + 1},keyword = ${nameSearchAfterSearch})}"
+       th:if="${listEmployee.hasNext()}">Next</a>
+</div>
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

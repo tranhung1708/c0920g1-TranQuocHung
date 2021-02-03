@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="bootstrap4131">
+    <ANNOTATIONS>
+      <root url="file://$PROJECT_DIR$/web/bootstrap413" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/web/bootstrap413" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/web/bootstrap413" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="file://$PROJECT_DIR$/web/bootstrap413" />
+    </NATIVE>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/web/bootstrap413" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/web/bootstrap413" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/web/bootstrap413" recursive="false" type="SOURCES" />
+  </library>
+</component>

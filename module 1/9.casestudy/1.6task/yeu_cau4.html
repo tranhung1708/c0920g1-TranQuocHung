@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+<h2><u>Reate Menus And Delete Nenus</u></h2>
+<form>
+    <input type="text" name="menu" id="menu">
+    <input type="button" value="tạo menu" onclick="Mymenu()">
+    <input type="button" value="xoa" onclick="Mymenu1()">
+</form>
+
+<p id="demo"></p>
+<script>
+    let fruits = [];
+    function Mymenu() {
+        let value = document.getElementById("menu").value;
+        fruits.push(value);
+        document.getElementById("menu").value = ""
+        document.getElementById("demo").innerHTML = fruits;
+    }
+
+    function Mymenu1() {
+        let value = document.getElementById("menu").value;
+        for (let i = 0; i < fruits.length; i++) {
+            if (fruits[i] == value) {
+                fruits.splice(i, 1);
+                document.getElementById("menu").value = ""
+            }
+        }
+        document.getElementById("demo").innerHTML = fruits;
+    }
+</script>
+</body>
+</html>

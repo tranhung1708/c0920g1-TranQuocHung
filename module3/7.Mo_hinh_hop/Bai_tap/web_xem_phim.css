@@ -1,0 +1,147 @@
+
+
+#main{
+    width: 1000px;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+#head{
+    height: 100px;
+    background-color: #F5F5F5;
+    border: 1px solid #CDCDCD;
+    margin-bottom:5px;
+    display: flex;
+
+}
+#head-link{
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #CDCDCD;
+    background-color: #F5F5F5;
+    width: 100%;
+    display: flex;
+    text-align: center;
+}
+#head-link:after{
+    clear: both;
+}
+#left{
+    width: 150px;
+    min-height: 400px;
+    border: 1px solid #CDCDCD;
+    float:left;
+    background-color: #F5F5F5;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    /*position: relative;*/
+}
+
+#content{
+    width: 836px;
+    height: 480px;
+    border: 1px solid #CDCDCD;
+    float:left;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+
+
+#footer{
+    height: 50px;
+    clear: both;
+    border: 1px solid #CDCDCD;
+    background-color: #F8F8FF;
+}
+.anh{
+    width: 30%;
+    height: 100px;
+}
+.abc{
+    margin-top: 0;
+}
+.video{
+    width: 150px;
+    height: 210px;
+    border-radius: 5px;
+}
+.videoMain{
+    width: 836px;
+    height: 208px;
+    border-radius: 10px;
+}
+.font{
+    font-family: Zapf Chancery, cursive;
+}
+.inst{
+    text-align: center;
+}
+.tieude{
+    width: 70%;
+    text-align: center;
+    align-self: center;
+}
+body{
+    font-family: Arial;
+}
+
+#head-link{
+    height: 30px;
+    padding:0;
+    margin:0;
+    background-color: #CDCDCD;
+    border: 1px solid #CDCDCD;
+    border-radius: 5px;
+}
+
+#head-link ul, #head-link li{
+    padding:0;
+    margin:0;
+    position: relative;
+    left: 100px
+}
+
+#head-link li{
+    position: relative;
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding:0;
+}
+
+#head-link li a{
+    width:200px;
+    height: 30px;
+    display: block;
+    text-decoration:none;
+    text-align: center;
+    line-height: 30px;
+    background-color: #CDCDCD;
+    color: black;
+}
+
+#head-link ul ul li a{
+    width: 200px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#head-link li a:hover{
+    background-color: red;
+}
+
+#head-link ul ul{
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    visibility: hidden;
+}
+
+#head-link ul li:hover ul{
+    visibility: visible;
+}

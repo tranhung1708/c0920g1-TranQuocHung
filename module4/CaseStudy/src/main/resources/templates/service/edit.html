@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+<body>
+<p>
+    <a th:href="@{/service}">
+        Back to customer list
+    </a>
+</p>
+<div id="form">
+    <form  th:action="@{/updateService}" th:object="${service}"
+           method="POST" novalidate="novalidate">
+        <input class="input-group mb-3" type="hidden" th:field="*{serviceId}"/>
+        <div>
+            <label>Service Name</label>
+            <input class="input-group mb-3" type="email" th:field="*{serviceName}"/>
+        </div>
+        <div>
+            <label>Service Area</label>
+            <input class="input-group mb-3" type="text" th:field="*{serviceArea}"/>
+        </div>
+        <div>
+            <label>Service Cost</label>
+            <input class="input-group mb-3" type="text" th:field="*{serviceCost}"/>
+        </div>
+        <div>
+            <label>Service Max People</label>
+            <input class="input-group mb-3" type="text" th:field="*{serviceMaxPeople}"/>
+        </div>
+        <div>
+            <label>Rent Type Name</label>
+            <input class="input-group mb-3" type="text" th:field="*{rentType.ren_type_name}"/>
+        </div>
+        <div>
+            <label>Service Type Name</label>
+            <input class="input-group mb-3" type="text" th:field="*{serviceType.service_type_name}"/>
+        </div>
+        <div>
+            <label>Standard Room</label>
+            <input class="input-group mb-3" type="text" th:field="*{standardRoom}"/>
+        </div>
+        <div>
+            <label>Description Other Convenience</label>
+            <input class="input-group mb-3" type="text" th:field="*{descriptionOtherConvenience}"/>
+        </div>
+        <div>
+            <label>Pool Area</label>
+            <input class="input-group mb-3" type="text" th:field="*{poolArea}"/>
+        </div>
+        <div>
+            <label>Number Of Floors</label>
+            <input class="input-group mb-3" type="text" th:field="*{numberOfFloors}"/>
+        </div>
+        <input type="submit" value="Edit">
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

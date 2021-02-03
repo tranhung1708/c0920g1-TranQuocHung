@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body>
+<div>
+    <div><h3>Thêm Mới Câu Hỏi</h3></div>
+    <div><p>
+        <a th:href="@{/}">
+            Back to list
+        </a>
+    </p>
+    </div>
+</div>
+<form th:action="@{/save}" th:object="${cauHoi}" method="post" novalidate="novalidate">
+    <div>
+        <label>Tiêu Đề</label>
+        <input class="input-group mb-3" type="text" th:field="*{tieuDe}">
+                <span style="color: red;" th:if="${#fields.hasErrors('tieuDe')}" th:errors="*{tieuDe}"></span>
+    </div>
+    <div>
+        <label>Loại Câu Hỏi</label>
+<!--        <input class="input-group mb-3" type="text" th:field="*{loaiCauHoi}">-->
+        <select name="loaiCauHoi">
+            <option value="Giáo Vụ">Giáo Vụ</option>
+            <option value="Khác">Khác</option>
+            <option value="Học Tập">Học Tập</option>
+        </select>
+        <!--        <span style="color: red;" th:if="${#fields.hasErrors('loaiCauHoi')}" th:errors="*{loaiCauHoi}"></span>-->
+    </div>
+
+    <div>
+        <label>Ngày Đăng</label>
+        <input class="input-group mb-3" type="date" th:field="*{ngayDang}">
+        <span style="color: red;" th:if="${#fields.hasErrors('ngayDang')}" th:errors="*{ngayDang}"></span>
+    </div>
+
+    <div>
+        <label>Người Hỏi</label>
+        <!--        <input class="input-group mb-3" type="text" th:field="*{nguoiHoi.idNguoiHoi}">-->
+        <select th:field="*{nguoiHoi.idNguoiHoi}" class="form-control"  name="Order">
+            <option th:each="nguoiHoi1 : ${nguoiHoi}"
+                    th:value="${nguoiHoi1.idNguoiHoi}"
+                    th:text="${nguoiHoi1.tenNguoiHoi}">
+            </option>
+        </select>
+    </div>
+
+    <div>
+        <label>Người Đáp</label>
+        <!--        <input class="input-group mb-3" type="text" th:field="*{nguoiDap.idNguoiDap}">-->
+        <select th:field="*{nguoiDap.idNguoiDap}" class="form-control"  name="Order">
+            <option th:each="nguoiDap1 : ${nguoiDap}"
+                    th:value="${nguoiDap1.idNguoiDap}"
+                    th:text="${nguoiDap1.tenNguoiDap}">
+            </option>
+        </select>
+    </div>
+
+    <div>
+        <label>Tình Trạng</label>
+        <input class="input-group mb-3" type="text" th:field="*{tinhTrang}">
+        <!--        <span style="color: red;" th:if="${#fields.hasErrors('tinhTrang')}" th:errors="*{tinhTrang}"></span>-->
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

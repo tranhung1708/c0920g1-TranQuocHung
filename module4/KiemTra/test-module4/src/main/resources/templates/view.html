@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body>
+<form th:action="@{/{id}/view}">
+    <div>
+        <p>Tiêu Đề:<span th:text="${cauHoi.tieuDe}"></span> </p>
+    </div>
+    <div>
+        <p>Loại câu hỏi:<span th:text="${cauHoi.loaiCauHoi}"></span> </p>
+    </div>
+    <div>
+        <p>Ngày Đăng:<span th:text="${cauHoi.ngayDang}"></span> </p>
+    </div>
+    <div>
+        <p>Người Hỏi<span th:text="${cauHoi.nguoiHoi.tenNguoiHoi}"></span> </p>
+    </div>
+    <div>
+        <p>Người Đáp<span th:text="${cauHoi.nguoiDap.tenNguoiDap}"></span> </p>
+    </div>
+
+    <div>
+        <p>Tình Trạng<span th:text="${cauHoi.tinhTrang}"></span> </p>
+    </div>
+
+</form>
+</body>
+</html>

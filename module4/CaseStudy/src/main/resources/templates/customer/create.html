@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+</head>
+<body>
+<div>
+    <div><h3>Add Customer</h3></div>
+    <div><p>
+        <a th:href="@{/customer}">
+            Back to product list
+        </a>
+    </p>
+    </div>
+</div>
+<div class="container-fluid" >
+    <div id="form">
+        <form th:action="@{/customer/save}" th:object="${customer}"
+              method="POST" novalidate="novalidate">
+            <input type="hidden" th:field="*{customerId}"/>
+            <!--            <div>-->
+            <!--                <label>Customer Id</label>-->
+            <!--                <input class="input-group mb-3" type="text" th:field="*{customerId}"/>-->
+            <!--            </div>-->
+            <div>
+                <label>Customer Type</label>
+                <!--                <input class="input-group mb-3" type="email" th:field="*{customerType}"/>-->
+                <select th:field="*{customerType.customerTypeId}" class="form-control" id="Order" name="Order">
+                    <option th:each="customerType : ${customerType}"
+                            th:value="${customerType.customerTypeId}"
+                            th:text="${customerType.customerTypeName}">
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label>Customer Name</label>
+                <input class="input-group mb-3" type="text" th:field="*{customerName}"/>
+                <p th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}" style="color: red"></p>
+
+            </div>
+            <div>
+                <label>Customer Birthday</label>
+                <input class="input-group mb-3" type="date" th:field="*{customerBirthday}"/>
+            </div>
+            <div>
+                <label>Customer Gender</label>
+                <!--                <input class="input-group mb-3" type="text" th:field="*{customerGender}"/>-->
+                <select class="form-control" name="customerGender">
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Third gender</option>
+                </select>
+            </div>
+            <div>
+                <label>Customer Id Card</label>
+                <input class="input-group mb-3" type="text" th:field="*{customerIdCard}"/>
+                <p th:if="${#fields.hasErrors('customerIdCard')}" th:errors="*{customerIdCard}" style="color: red"></p>
+            </div>
+            <div>
+                <label>Customer Phone</label>
+                <input class="input-group mb-3" type="text" th:field="*{customerPhone}"/>
+            </div>
+            <div>
+                <label>Customer Email</label>
+                <input class="input-group mb-3" type="text" th:field="*{customerEmail}"/>
+                <p th:if="${#fields.hasErrors('customerEmail')}" th:errors="*{customerEmail}" style="color: red"></p>
+            </div>
+            <div>
+                <label>Customer Address</label>
+                <!--                <input class="input-group mb-3" type="text" th:field="*{customerAddress}"/>-->
+                <select class="form-control " name="customerAddress">
+                    <option>Thành phố Hà Nội</option>
+                    <option>Tỉnh Hà Giang</option>
+                    <option>Tỉnh Cao Bằng</option>
+                    <option>Tỉnh Bắc Kạn</option>
+                    <option>Tỉnh Tuyên Quang</option>
+                    <option>Tỉnh Lào Cai</option>
+                    <option>Tỉnh Điện Biên</option>
+                    <option>Tỉnh Lai Châu</option>
+                    <option>Tỉnh Sơn La</option>
+                    <option>Tỉnh Yên Bái</option>
+                    <option>Tỉnh Hoà Bình</option>
+                    <option>Tỉnh Thái Nguyên</option>
+                    <option>Tỉnh Lạng Sơn</option>
+                    <option>Tỉnh Quảng Ninh</option>
+                    <option>Tỉnh Bắc Giang</option>
+                    <option>Tỉnh Phú Thọ</option>
+                    <option>Tỉnh Vĩnh Phúc</option>
+                    <option>Tỉnh Bắc Ninh</option>
+                    <option>Tỉnh Hải Dương</option>
+                    <option>Thành phố Hải Phòng</option>
+                    <option>Tỉnh Hưng Yên</option>
+                    <option>Tỉnh Thái Bình</option>
+                    <option>Tỉnh Hà Nam</option>
+                    <option>Tỉnh Nam Định</option>
+                    <option>Tỉnh Ninh Bình</option>
+                    <option>Tỉnh Thanh Hóa</option>
+                    <option>Tỉnh Nghệ An</option>
+                    <option>Tỉnh Hà Tĩnh</option>
+                    <option>Tỉnh Quảng Bình</option>
+                    <option>Tỉnh Quảng Trị</option>
+                    <option>Tỉnh Thừa Thiên Huế</option>
+                    <option>Thành phố Đà Nẵng</option>
+                    <option>Tỉnh Quảng Nam</option>
+                    <option>Tỉnh Quảng Ngãi</option>
+                    <option>Tỉnh Bình Định</option>
+                    <option>Tỉnh Phú Yên</option>
+                    <option>Tỉnh Khánh Hòa</option>
+                    <option>Tỉnh Ninh Thuận</option>
+                    <option>Tỉnh Bình Thuận</option>
+                    <option>Tỉnh Kon Tum</option>
+                    <option>Tỉnh Gia Lai</option>
+                    <option>Tỉnh Đắk Lắk</option>
+                    <option>Tỉnh Đắk Nông</option>
+                    <option>Tỉnh Lâm Đồng</option>
+                    <option>Tỉnh Bình Phước</option>
+                    <option>Tỉnh Tây Ninh</option>
+                    <option>Tỉnh Bình Dương</option>
+                    <option>Tỉnh Đồng Nai</option>
+                    <option>Tỉnh Bà Rịa - Vũng Tàu</option>
+                    <option>Thành phố Hồ Chí Minh</option>
+                    <option>Tỉnh Long An</option>
+                    <option>Tỉnh Tiền Giang</option>
+                    <option>Tỉnh Bến Tre</option>
+                    <option>Tỉnh Trà Vinh</option>
+                    <option>Tỉnh Vĩnh Long</option>
+                    <option>Tỉnh Đồng Tháp</option>
+                    <option>Tỉnh An Giang</option>
+                    <option>Tỉnh Kiên Giang</option>
+                    <option>Thành phố Cần Thơ</option>
+                    <option>Tỉnh Hậu Giang</option>
+                    <option>Tỉnh Sóc Trăng</option>
+                    <option>Tỉnh Bạc Liêu</option>
+                    <option>Tỉnh Cà Mau</option>
+                </select>
+            </div>
+            <input style="margin-left: 105px" class="btn badge-dark" type="submit" value="Save">
+        </form>
+    </div>
+</div>
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

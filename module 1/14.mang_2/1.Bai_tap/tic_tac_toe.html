@@ -1,0 +1,102 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<p id="display"></p>
+<script>
+    let array=new Array(); // Tạo 1 biến toàn cục lưu trữ dữ liệu của bàn cờ caro (1 mảng 2 chiều)
+    let check =true; // 1 biến boolean để check trường hợp thanh niên nào đang chơi (X hoặc O)
+    // hàm khởi tạo giá trị cho array (khởi tạo giá trị cho bàn cờ
+    function init() {
+        for(let i =0;i<10;i++) {
+            array[i]=new Array();
+            for(let j=0;j<10;j++) {
+                array[i][j]="&nbsp&nbsp";
+            }
+        }
+    }
+    // hàm hiển thị bàn cờ
+    function displayCaro() {
+        let display = "<table border='1' height='500px' >"
+        for (let i = 0; i < 10; i++) {
+            // mở 1 dòng trong table
+            display += "<tr>";
+            for (let j = 0; j < 10; j++) {
+                //gán giá trị tương ứng của mỗi phần tử bàn cờ với phần tử của array
+                // hàm onclick sẽ dược gọi khi người chơi click vào ô muốn chọn và gọi hàm changeValue
+                // truyền vào 2 tham số là i và j. 2 biến này sẽ thay đổi tùy theo vòng lặp
+                display += "<th width='50px' onclick='changeValue("+i+","+j+")'>"+array[i][j] +"</th>"
+            }
+            //đóng dòng
+            display += "</tr>"
+        }
+        //đóng table
+        display += "</table>"
+        //hiển thị table cho thẻ có id là display
+        document.getElementById("display").innerHTML = display;
+    }
+    // hàm thay đổi giá trị array ở vị trí index x, y được truyền xuống từ HTML thông qua phương thức onclick
+    function changeValue(x,y) {
+        //Trước khi thay đổi giá trị của array[x][y] thì cần kiểm tra ô đó có được chơi trước hay chưa?
+        if(array[x][y]==="X" || array[x][y]==="O") {
+            alert("ô này đã được đánh. Mời bạn đánh ô khác . Không thì xét thua")
+        } else {
+            // Sau khi kiểm tra. Nếu được phép chơi thì sẽ kiểm tra người nào sẽ được chơi
+            // nếu check = true thì người chơi X được chơi
+            // nếu check = false thì người chơi Y được chơi
+            // Sau khi thay đổi giá trị của array thì cần kiểm tra người thắng bằng hàm checkWinner
+            // Sau khi chơi xong mà không có người thắng thì thay đổi giá trị của biến check;
+            if(check) {
+                array[x][y]="X";
+                checkWinner("X");
+                check =false;
+            } else {
+                array[x][y]="O";
+                checkWinner("O")
+                check= true;
+            }
+        }
+        displayCaro();
+    }
+    //Hàm checkWinner dùng để kiểm tra người thắng
+    // có 4 trường hợp thắng
+    function checkWinner(temp) {
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < 8; j++) {
+                if (array[i][j] == temp && array[i][j + 1] == temp && array[i][j + 2] == temp) {
+                    alert(temp + " win")
+                    init();
+                    displayCaro();
+                }
+            }
+        }
+        for (let i = 0; i < 8; i++) {
+            for (let j = 0; j < 10; j++) {
+                if (array[i][j] == temp && array[i + 1][j] == temp && array[i + 2][j] == temp) {
+                    alert(temp + " win")
+                    init();
+                    displayCaro();
+                }
+            }
+            for (let j = 0; j < 8; j++) {
+                if (array[i][j] == temp && array[i + 1][j + 1] == temp && array[i + 2][j + 2] == temp) {
+                    alert(temp + " win")
+                    init();
+                    displayCaro();
+                }
+            }
+            for (let j = 2; j < 10; j++) {
+                if (array[i][j] == temp && array[i + 1][j - 1] == temp && array[i + 2][j - 2] == temp) {
+                    alert(temp + " win")
+                    init();
+                    displayCaro();
+                }
+            }
+        }
+    }
+    init();
+    displayCaro();
+</script>
+</body>
+</html>

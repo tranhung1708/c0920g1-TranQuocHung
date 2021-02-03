@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="jquery">
+    <ANNOTATIONS>
+      <root url="file://D:/table_sortpage/table_sortpage/jquery" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://D:/table_sortpage/table_sortpage/jquery" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://D:/table_sortpage/table_sortpage/jquery" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="file://D:/table_sortpage/table_sortpage/jquery" />
+    </NATIVE>
+    <SOURCES>
+      <root url="file://D:/table_sortpage/table_sortpage/jquery" />
+    </SOURCES>
+    <jarDirectory url="file://D:/table_sortpage/table_sortpage/jquery" recursive="false" />
+    <jarDirectory url="file://D:/table_sortpage/table_sortpage/jquery" recursive="false" type="SOURCES" />
+  </library>
+</component>

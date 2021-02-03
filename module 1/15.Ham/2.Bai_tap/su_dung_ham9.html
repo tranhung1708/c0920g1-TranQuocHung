@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>N! in Javascript</title>
+</head>
+<body>
+<input type="text" name="number" id="number">
+<button onclick="tingiaithua()">Tinh N!</button>
+
+<script type="text/javascript">
+
+    function tingiaithua() {
+        var result = 1;
+        var num = document.getElementById("number").value;
+        for (i=1;i<=num;i++) {
+            result *= i;
+        }
+        alert(result)
+    }
+</script>
+</body>
+</html>

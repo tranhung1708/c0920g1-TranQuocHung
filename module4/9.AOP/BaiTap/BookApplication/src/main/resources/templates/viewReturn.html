@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/save}" th:object="${orderBook}">
+    <label>ID</label>
+    <input th:field="*{id}" readonly><br>
+    <label>ID Book</label>
+    <input th:field="*{library.id}" readonly><br>
+    <label>Name Book</label>
+    <input th:field="*{library.nameBook}" readonly><br>
+    <label>Content Book</label>
+    <input th:field="*{library.content}" readonly><br>
+    <label>Number</label>
+    <input th:field="*{library.quantity}" readonly><br>
+    <button type="submit">Return</button>
+</form>
+</body>
+</html>

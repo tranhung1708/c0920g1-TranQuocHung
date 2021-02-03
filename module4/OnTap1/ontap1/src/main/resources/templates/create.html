@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body>
+<form th:action="@{/save}" th:object="${customer}" method="post">
+    <div>
+        <label>Customer Name</label>
+        <input class="input-group mb-3" type="text" th:field="*{nameCustomer}">
+        <span style="color: red;" th:if="${#fields.hasErrors('nameCustomer')}" th:errors="*{nameCustomer}"></span>
+
+    </div>
+    <div>
+        <label>Customer Birthday</label>
+        <input class="input-group mb-3" type="date" th:field="*{birthdayCustomer}">
+        <span style="color: red;" th:if="${#fields.hasErrors('birthdayCustomer')}"
+              th:errors="*{birthdayCustomer}"></span>
+
+    </div>
+    <div>
+        <label>Customer Address</label>
+        <input class="input-group mb-3" type="text" th:field="*{addressCustomer}">
+    </div>
+    <div>
+        <label>Customer Gender</label>
+        <input class="input-group mb-3" type="text" th:field="*{genderCustomer}">
+    </div>
+    <div>
+        <label>Service ID</label>
+        <!--        <input class="input-group mb-3" type="text" th:field="*{service.idService}">-->
+            <select th:field="*{service.idService}" class="form-control" id="Order" name="Order">
+                <option th:each="service1 : ${service}"
+                        th:value="${service1.idService}"
+                        th:text="${service1.nameService}">
+                </option>
+            </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+</body>
+</html>

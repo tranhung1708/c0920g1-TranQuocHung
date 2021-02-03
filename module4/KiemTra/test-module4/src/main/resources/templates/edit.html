@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body>
+<div><p>
+    <a th:href="@{/}">
+        Back to list
+    </a>
+</p>
+</div>
+<form th:action="@{/updateCauHoi}" th:object="${cauHoi}" method="post" novalidate="novalidate">
+    <div>
+        <label>STT</label>
+        <input class="input-group mb-3" type="hidden" th:field="*{idCauHoi}">
+        <!--        <span style="color: red;" th:if="${#fields.hasErrors('tieuDe')}" th:errors="*{tieuDe}"></span>-->
+    </div>
+    <div>
+        <label>Tiêu Đề</label>
+        <input class="input-group mb-3" type="text" th:field="*{tieuDe}">
+        <!--        <span style="color: red;" th:if="${#fields.hasErrors('tieuDe')}" th:errors="*{tieuDe}"></span>-->
+    </div>
+    <div>
+        <label>Loại Câu Hỏi</label>
+        <input class="input-group mb-3" type="text" th:field="*{loaiCauHoi}">
+        <!--        <span style="color: red;" th:if="${#fields.hasErrors('loaiCauHoi')}" th:errors="*{loaiCauHoi}"></span>-->
+    </div>
+
+    <div>
+        <label>Ngày Đăng</label>
+        <input class="input-group mb-3" type="date" th:field="*{ngayDang}">
+        <span style="color: red;" th:if="${#fields.hasErrors('ngayDang')}" th:errors="*{ngayDang}"></span>
+    </div>
+
+    <div>
+        <label>Người Hỏi</label>
+        <!--        <input class="input-group mb-3" type="text" th:field="*{nguoiHoi.idNguoiHoi}">-->
+        <select th:field="*{nguoiHoi.idNguoiHoi}" class="form-control"  name="Order">
+            <option th:each="nguoiHoi1 : ${nguoiHoi}"
+                    th:value="${nguoiHoi1.idNguoiHoi}"
+                    th:text="${nguoiHoi1.tenNguoiHoi}">
+            </option>
+        </select>
+    </div>
+
+    <div>
+        <label>Người Đáp</label>
+        <!--        <input class="input-group mb-3" type="text" th:field="*{nguoiDap.idNguoiDap}">-->
+        <select th:field="*{nguoiDap.idNguoiDap}" class="form-control"  name="Order">
+            <option th:each="nguoiDap1 : ${nguoiDap}"
+                    th:value="${nguoiDap1.idNguoiDap}"
+                    th:text="${nguoiDap1.tenNguoiDap}">
+            </option>
+        </select>
+    </div>
+
+    <div>
+        <label>Tình Trạng</label>
+        <input class="input-group mb-3" type="text" th:field="*{tinhTrang}">
+        <!--        <span style="color: red;" th:if="${#fields.hasErrors('tinhTrang')}" th:errors="*{tinhTrang}"></span>-->
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+</body>
+</html>

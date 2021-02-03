@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/save}" th:object="${giaoDich}" method="post" novalidate="novalidate">
+    <div>
+        <label>Mã Giao Dịch</label>
+        <input type="hidden" th:field="*{idGiaoDich}">
+    </div>
+    <div>
+        <label>Tên Giao Dịch</label>
+        <!--        <input type="text" th:field="*{tenGiaoDich}">-->
+        <select name="tenGiaoDich">
+            <option value="Thuê">Thuê</option>
+            <option value="Mua">Mua</option>
+        </select>
+    </div>
+    <div>
+        <label>Loại Giao Dịch</label>
+        <!--        <input type="text" th:field="*{loaiGiaoDich}">-->
+        <select name="loaiGiaoDich">
+            <option value="Nhà">Nhà</option>
+            <option value="Đất">Đất</option>
+        </select>
+    </div>
+    <div>
+        <label>Đơn Giá</label>
+        <input type="number" th:field="*{donGia}">
+        <span style="color: red;" th:if="${#fields.hasErrors('donGia')}" th:errors="*{donGia}"></span>
+    </div>
+    <div>
+        <label>Ngày giao dịch</label>
+        <input type="date" th:field="*{ngayGiaoDich}">
+    </div>
+    <div>
+        <label>Khách Hàng</label>
+        <!--        <input type="text" th:field="*{khachHang.maKhachHang}">-->
+        <select th:field="*{khachHang.maKhachHang}" name="maKhachHang">
+            <option th:each="khachHang:${khachHangList}"
+                    th:value="${khachHang.maKhachHang}"
+                    th:text="${khachHang.tenKhachHang}">
+            </option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">Xác Nhận</button>
+    </div>
+</form>
+</body>
+</html>

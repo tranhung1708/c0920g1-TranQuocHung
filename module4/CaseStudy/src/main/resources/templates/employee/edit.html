@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <style>
+        body{
+            background-image: url("img/backgroud.jpg");
+        }
+    </style>
+</head>
+<body>
+<div>
+<!--    <button class="btn btn-group-toggle" th:href="@{/employee}">Back to employee list</button>-->
+    <a class="btn btn-light" th:href="@{/employee}"><button type="button">Back to employee list</button></a>
+</div>
+<div class="container-fluid" style="width: 300px;background-color: #DCDCDC;color: #800000;border-radius: 5px">
+<form th:action="@{/employee/updateEmployee}" th:object="${employee}"
+      method="POST" novalidate="novalidate">
+    <input class="form-control " type="hidden" th:field="*{employeeId}"/>
+    <div>
+        <label>Employee Name</label>
+        <input class="form-control " type="email" th:field="*{employeeName}"/>
+    </div>
+    <div>
+        <label>Employee Birthday</label>
+        <input class="form-control " type="text" th:field="*{employeeBirthday}"/>
+    </div>
+    <div>
+        <label>Employee Id Card</label>
+        <input class="form-control" type="text" th:field="*{employeeIdCard}"/>
+    </div>
+    <div>
+        <label>Employee Salary</label>
+        <input class="form-control" type="text" th:field="*{employeeSalary}"/>
+    </div>
+    <div>
+        <label>Employee Phone</label>
+        <input class="form-control" type="text" th:field="*{employeePhone}"/>
+    </div>
+    <div>
+        <label>Employee Email</label>
+        <input class="form-control" type="text" th:field="*{employeeEmail}"/>
+    </div>
+    <div>
+        <label>Employee Address</label>
+        <input class="form-control" type="text" th:field="*{employeeAddress}"/>
+    </div>
+    <div>
+        <label>Position</label>
+        <!--                <input class="input-group mb-3" type="text" th:field="*{position}"/>-->
+        <select th:field="*{position.positionId}" class="form-control" name="position">
+            <option th:each="postion1 : ${position}"
+                    th:value="${postion1.positionId}"
+                    th:text="${postion1.positionName}">
+            </option>
+        </select>
+    </div>
+    <div>
+        <label>Education Degree</label>
+        <!--                <input class="input-group mb-3" type="text" th:field="*{education_degree}"/>-->
+        <select th:field="*{education_degree.educationDegreeId}" class="form-control" name="education_degree">
+            <option th:each="educationDegree1 : ${educationDegree}"
+                    th:value="${educationDegree1.educationDegreeId}"
+                    th:text="${educationDegree1.educationDegreeName}">
+            </option>
+        </select>
+    </div>
+    <div>
+        <label>Division</label>
+        <!--                <input class="input-group mb-3" type="text" th:field="*{division}"/>-->
+        <select th:field="*{division.divisionId}" class="form-control" name="division">
+            <option th:each="division1 : ${division}"
+                    th:value="${division1.divisionId}"
+                    th:text="${division1.divisionName}">
+            </option>
+        </select>
+    </div>
+    <div>
+        <label>User</label>
+        <!--                <input class="input-group mb-3" type="text" th:field="*{user}"/>-->
+        <select th:field="*{user}" class="form-control" name="user">
+            <option th:each="user1 : ${user}"
+                    th:value="${user1.id}"
+                    th:text="${user1.username}">
+            </option>
+        </select>
+    </div>
+    <input style="margin-left: 105px" class="bnt btn-danger" type="submit" value="Edit">
+</form>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

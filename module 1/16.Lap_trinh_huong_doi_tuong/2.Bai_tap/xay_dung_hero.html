@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>myHero</title>
+</head>
+<body>
+<img id="imgHero" style="position: absolute; left: 0px;top:0px"/>
+<script>
+    class Hero{
+        constructor(srcImg, speed, left, top) {
+            this.srcImg = srcImg;
+            this.speed = speed;
+            this.left = left;
+            this.top = top;
+        }
+        displayHero(){
+            let hero = document.getElementById("imgHero");
+            hero.src = this.srcImg;
+            hero.style.left = this.left + "px";
+            hero.style.top = this.top + "px";
+            hero.style.width = 200 + "px";
+        }
+        moveLeft(){
+            if (this.left > 0){
+                this.left -= this.speed;
+                this.displayHero();
+            }
+        }
+        moveRight(){
+            this.left += this.speed;
+            this.displayHero();
+        }
+        moveUp(){
+            if (this.top > 0){
+                this.top -= this.speed;
+                this.displayHero();
+            }
+        }
+        moveDown(){
+            this.top += this.speed;
+            this.displayHero();
+        }
+    }
+    let hero = new Hero("../../17.anh/anh.jpg", 20, 0, 0);
+    hero.displayHero();
+    let checkQueoPhai = true;
+    let checkBayLen = false;
+    function move() {
+        if (hero.left < window.innerWidth-386 && checkQueoPhai) {
+            hero.moveRight();
+        } else if(hero.top<window.innerHeight-270 &&!checkBayLen) {
+            hero.moveDown();
+            checkQueoPhai =false;
+        } else if(hero.left>0 &&!checkQueoPhai) {
+            hero.moveLeft();
+            checkBayLen = true;
+        } else if(hero.top>0 && checkBayLen){
+            hero.moveUp();
+        } else {
+            checkQueoPhai =true;
+            checkBayLen =false;
+        }
+        setTimeout(move,100)
+    }
+    move();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lamgame</title>
+</head>
+<body>
+<img id="carA" onclick="onchangeImage(1)" src="../../9.casestudy/picture/Hinh 1a.png" height="1078" width="358">
+<img id="carB" onclick="onchangeImage(2)" src="../../9.casestudy/picture/Hinh 1b.png" height="1078" width="358">
+<img id="carC" onclick="onchangeImage(3)" src="../../9.casestudy/picture/Hinh 1c.png" height="1078" width="358">
+<img id="carD" onclick="onchangeImage(4)" src="../../9.casestudy/picture/Hinh 1d.png" height="1080" width="358">
+<img id="carE" onclick="onchangeImage(5)" src="../../9.casestudy/picture/Hinh 1e.png" height="1078" width="358">
+<script>
+    let imageA = document.getElementById("carA");
+    let imageB = document.getElementById("carB");
+    let imageC= document.getElementById("carC");
+    let imageD= document.getElementById("carD");
+    let imageE= document.getElementById("carE");
+  function onchangeImage(num) {
+      switch (num) {
+          case 1:
+             if (imageA.getAttribute("src") === "../../9.casestudy/picture/Hinh 1a.png"){
+                 imageA.src = "../../9.casestudy/picture/Hinh 2a.png";
+             }
+              else if (imageA.getAttribute("src")=== "../../9.casestudy/picture/Hinh 2a.png"){
+                  imageA.src = "../../9.casestudy/picture/Hinh 3a.png";
+              }
+                 else if (imageA.getAttribute("src") === "../../9.casestudy/picture/Hinh 3a.png"){
+                     imageA.src = "../../9.casestudy/picture/Hinh 1a.png";
+                 }
+                     break;
+          case 2:
+              if (imageB.getAttribute("src")==="../../9.casestudy/picture/Hinh 1b.png") {
+                  imageB.src = "../../9.casestudy/picture/Hinh 2b.png";
+              }
+              else if (imageB.getAttribute("src") ==="../../9.casestudy/picture/Hinh 2b.png") {
+                  imageB.src = "../../9.casestudy/picture/Hinh 3b.png";
+              }
+              else if (imageB.getAttribute("src")=== "../../9.casestudy/picture/Hinh 3b.png") {
+                  imageB.src= "../../9.casestudy/picture/Hinh 1b.png";
+              }
+                 break;
+              case 3:
+                  if (imageC.getAttribute("src")==="../../9.casestudy/picture/Hinh 1c.png"){
+                      imageC.src = "../../9.casestudy/picture/Hinh 2c.png";
+                  }
+                  else if (imageC.getAttribute("src")==="../../9.casestudy/picture/Hinh 2c.png"){
+                      imageC.src = "../../9.casestudy/picture/Hinh 3c.png";
+                  }
+                  else if (imageC.getAttribute("src")==="../../9.casestudy/picture/Hinh 3c.png"){
+                      imageC.src = "../../9.casestudy/picture/Hinh 1c.png";
+                  }
+                      break;
+                  case 4:
+                      if (imageD.getAttribute("src")==="../../9.casestudy/picture/Hinh 1d.png"){
+                          imageD.src = "../../9.casestudy/picture/Hinh 2d.png";
+                      }
+                      else if (imageD.getAttribute("src")==="../../9.casestudy/picture/Hinh 2d.png"){
+                          imageD.src = "../../9.casestudy/picture/Hinh 3d.png";
+                      }
+                      else if (imageD.getAttribute("src")=== "../../9.casestudy/picture/Hinh 3d.png"){
+                          imageD.src = "../../9.casestudy/picture/Hinh 1d.png";
+                      }
+                      break;
+                      case 5:
+                          if (imageE.getAttribute("src")=== "../../9.casestudy/picture/Hinh 1e.png"){
+                              imageE.src = "../../9.casestudy/picture/Hinh 2e.png";
+                          }
+                          else if (imageE.getAttribute("src")=== "../../9.casestudy/picture/Hinh 2e.png"){
+                              imageE.src = "../../9.casestudy/picture/Hinh 3e.png";
+                          }
+                          else if (imageE.getAttribute("src")=== "../../9.casestudy/picture/Hinh 3e.png"){
+                              imageE.src = "../../9.casestudy/picture/Hinh 1e.png";
+                          }
+                          break;
+      }
+      }
+      </script>
+</body>
+</html>

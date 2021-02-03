@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hoatdongcuabongden</title>
+</head>
+<body>
+<h1><u><b>Bật Tắt Bóng Đèn</b></u></h1>
+<img id="lamp" src="../anh/pic_bulboff.gif" height="180" width="100"/>
+<button id="switch" onclick="turnOn_turnOff_lamp()">TurnON/TurnOff</button>
+<h4 id="result">Bóng Đèn Đang Tắt</h4>
+<script>
+    class SwitchButton {
+        constructor(status) {
+            this.status = status;
+        }
+
+        turnOn_turnOff_lamp() {
+            this.status = !this.status;
+        }
+    }
+
+    class Light {
+        constructor(button) {
+            this.button = button;
+        }
+
+        switch() {
+            if (this.button.status === true) {
+                document.getElementById("lamp").src = "../anh/pic_bulbon.gif";
+                document.getElementById("result").innerHTML = "bong den dang bat";
+            } else {
+                document.getElementById("lamp").src = "../anh/pic_bulboff.gif";
+                document.getElementById("result").innerHTML = "bong den dang tat";
+            }
+        }
+    }
+
+    let switchButton1 = new SwitchButton(false);
+    let lamp = new Light(switchButton1);
+
+    function turnOn_turnOff_lamp() {
+        switchButton1.turnOn_turnOff_lamp();
+        lamp.switch();
+    }
+</script>
+</body>
+</html>

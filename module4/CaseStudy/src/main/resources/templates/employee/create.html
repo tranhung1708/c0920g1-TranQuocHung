@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body>
+<h3>Add Employee</h3>
+<p>
+    <a th:href="@{/employee}">
+        Back to service list
+    </a>
+</p>
+<div class="container-fluid" >
+    <div id="form">
+        <form th:action="@{/employee/save}" th:object="${employeeList}"
+              method="POST" novalidate="novalidate">
+            <div>
+                <label>Employee Id</label>
+                <input class="input-group mb-3" type="text" th:field="*{employeeId}"/>
+                <span style="color: red;" th:if="${#fields.hasErrors('employeeId')}" th:errors="*{employeeId}"></span>
+
+            </div>
+            <div>
+                <label>Employee Name</label>
+                <input class="input-group mb-3" type="email" th:field="*{employeeName}"/>
+                <span style="color: red;" th:if="${#fields.hasErrors('employeeName')}" th:errors="*{employeeName}"></span>
+
+            </div>
+            <div>
+                <label>Employee Birthday</label>
+                <input class="input-group mb-3" type="date" th:field="*{employeeBirthday}"/>
+            </div>
+            <div>
+                <label>Employee Id Card</label>
+                <input class="input-group mb-3" type="text" th:field="*{employeeIdCard}"/>
+                <span style="color: red;" th:if="${#fields.hasErrors('employeeIdCard')}" th:errors="*{employeeIdCard}"></span>
+
+            </div>
+            <div>
+                <label>Employee Salary</label>
+                <input class="input-group mb-3" type="text" th:field="*{employeeSalary}"/>
+                <span style="color: red;" th:if="${#fields.hasErrors('employeeSalary')}" th:errors="*{employeeSalary}"></span>
+
+            </div>
+            <div>
+                <label>Employee Phone</label>
+                <input class="input-group mb-3" type="text" th:field="*{employeePhone}"/>
+                <span style="color: red;" th:if="${#fields.hasErrors('employeePhone')}" th:errors="*{employeePhone}"></span>
+
+            </div>
+            <div>
+                <label>Employee Email</label>
+                <input class="input-group mb-3" type="text" th:field="*{employeeEmail}"/>
+                <span style="color: red;" th:if="${#fields.hasErrors('employeeEmail')}" th:errors="*{employeeEmail}"></span>
+
+            </div>
+            <div>
+                <label>Employee Address</label>
+<!--                <input class="input-group mb-3" type="text" th:field="*{employeeAddress}"/>-->
+                <select class="form-control " name="employeeAddress">
+                    <option>Thành phố Hà Nội</option>
+                    <option>Tỉnh Hà Giang</option>
+                    <option>Tỉnh Cao Bằng</option>
+                    <option>Tỉnh Bắc Kạn</option>
+                    <option>Tỉnh Tuyên Quang</option>
+                    <option>Tỉnh Lào Cai</option>
+                    <option>Tỉnh Điện Biên</option>
+                    <option>Tỉnh Lai Châu</option>
+                    <option>Tỉnh Sơn La</option>
+                    <option>Tỉnh Yên Bái</option>
+                    <option>Tỉnh Hoà Bình</option>
+                    <option>Tỉnh Thái Nguyên</option>
+                    <option>Tỉnh Lạng Sơn</option>
+                    <option>Tỉnh Quảng Ninh</option>
+                    <option>Tỉnh Bắc Giang</option>
+                    <option>Tỉnh Phú Thọ</option>
+                    <option>Tỉnh Vĩnh Phúc</option>
+                    <option>Tỉnh Bắc Ninh</option>
+                    <option>Tỉnh Hải Dương</option>
+                    <option>Thành phố Hải Phòng</option>
+                    <option>Tỉnh Hưng Yên</option>
+                    <option>Tỉnh Thái Bình</option>
+                    <option>Tỉnh Hà Nam</option>
+                    <option>Tỉnh Nam Định</option>
+                    <option>Tỉnh Ninh Bình</option>
+                    <option>Tỉnh Thanh Hóa</option>
+                    <option>Tỉnh Nghệ An</option>
+                    <option>Tỉnh Hà Tĩnh</option>
+                    <option>Tỉnh Quảng Bình</option>
+                    <option>Tỉnh Quảng Trị</option>
+                    <option>Tỉnh Thừa Thiên Huế</option>
+                    <option>Thành phố Đà Nẵng</option>
+                    <option>Tỉnh Quảng Nam</option>
+                    <option>Tỉnh Quảng Ngãi</option>
+                    <option>Tỉnh Bình Định</option>
+                    <option>Tỉnh Phú Yên</option>
+                    <option>Tỉnh Khánh Hòa</option>
+                    <option>Tỉnh Ninh Thuận</option>
+                    <option>Tỉnh Bình Thuận</option>
+                    <option>Tỉnh Kon Tum</option>
+                    <option>Tỉnh Gia Lai</option>
+                    <option>Tỉnh Đắk Lắk</option>
+                    <option>Tỉnh Đắk Nông</option>
+                    <option>Tỉnh Lâm Đồng</option>
+                    <option>Tỉnh Bình Phước</option>
+                    <option>Tỉnh Tây Ninh</option>
+                    <option>Tỉnh Bình Dương</option>
+                    <option>Tỉnh Đồng Nai</option>
+                    <option>Tỉnh Bà Rịa - Vũng Tàu</option>
+                    <option>Thành phố Hồ Chí Minh</option>
+                    <option>Tỉnh Long An</option>
+                    <option>Tỉnh Tiền Giang</option>
+                    <option>Tỉnh Bến Tre</option>
+                    <option>Tỉnh Trà Vinh</option>
+                    <option>Tỉnh Vĩnh Long</option>
+                    <option>Tỉnh Đồng Tháp</option>
+                    <option>Tỉnh An Giang</option>
+                    <option>Tỉnh Kiên Giang</option>
+                    <option>Thành phố Cần Thơ</option>
+                    <option>Tỉnh Hậu Giang</option>
+                    <option>Tỉnh Sóc Trăng</option>
+                    <option>Tỉnh Bạc Liêu</option>
+                    <option>Tỉnh Cà Mau</option>
+                </select>
+            </div>
+            <div>
+                <label>Position</label>
+<!--                <input class="input-group mb-3" type="text" th:field="*{position}"/>-->
+                    <select th:field="*{position.positionId}" class="form-control"  name="position">
+                        <option th:each="postion1 : ${position}"
+                                th:value="${postion1.positionId}"
+                                th:text="${postion1.positionName}">
+                        </option>
+                    </select>
+                </div>
+            <div>
+                <label>Education Degree</label>
+<!--                <input class="input-group mb-3" type="text" th:field="*{education_degree}"/>-->
+                <select th:field="*{education_degree.educationDegreeId}" class="form-control"  name="education_degree">
+                    <option th:each="educationDegree1 : ${educationDegree}"
+                            th:value="${educationDegree1.educationDegreeId}"
+                            th:text="${educationDegree1.educationDegreeName}">
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label>Division</label>
+<!--                <input class="input-group mb-3" type="text" th:field="*{division}"/>-->
+                <select th:field="*{division.divisionId}" class="form-control"  name="division">
+                    <option th:each="division1 : ${division}"
+                            th:value="${division1.divisionId}"
+                            th:text="${division1.divisionName}">
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label>User</label>
+<!--                <input class="input-group mb-3" type="text" th:field="*{user}"/>-->
+                <select th:field="*{user}" class="form-control"  name="user">
+                    <option th:each="user1 : ${user}"
+                            th:value="${user1.id}"
+                            th:text="${user1.username}">
+                    </option>
+                </select>
+            </div>
+
+            <input class="btn badge-dark" type="submit" value="Save">
+        </form>
+    </div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

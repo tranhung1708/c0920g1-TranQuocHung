@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sudungham</title>
+</head>
+<body>
+<script>
+    let  arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let  arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let index = prompt("");
+    function myFunction(arr1,arr2) {
+    for (let i = 0 ; i < arr1.length ;i ++){
+        if (index == arr2[i]){
+            alert(arr1[i]);
+        }else if (index == arr1[i]){
+            alert(arr2[i]);
+        }
+    }
+    }
+    myFunction(arr1,arr2);
+</script>
+</body>
+</html>

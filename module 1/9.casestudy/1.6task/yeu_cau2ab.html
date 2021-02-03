@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hienthithongtinkhachhang</title>
+</head>
+<body>
+<script>
+    let name = "Hung";
+    let cmnd = "123/123/123";
+    let birthday = 15 / 3 / 2020;
+    let email = "abc@abc.abc";
+    let address = "Da Nang";
+    let typerService = "villa";
+    let typerRoom = "vip";
+    let typerCustomer = "Diamond";
+    let discount = "10";
+    let quantityIncluded = "10";
+    let rendDays = "7";
+    // let tatolPlay;
+    let choose = parseInt(prompt("1.Hiển Thị Thông Tin khách Hàng." + "\n" +
+        "2.Chỉnh Sửa Thông Tin khách Hàng." + "\n" +
+        "3.Hiển Thị Giá Sau Khi Giảm Giá."));
+    switch (choose) {
+        case 1 : {
+            alert("Ten:" + name + "\n" +
+                "Cmnd:" + cmnd + "\n" +
+                "NgaySinh:" + birthday + "\n" +
+                "Email:" + email + "\n" +
+                "DiaChi:" + address + "\n" +
+                "DichVu:" + typerService + "\n" +
+                "Loaiphong:" + typerRoom + "\n" +
+                "LoaiKhachHang:" + typerCustomer + "\n" +
+                "GiamGia:" + discount + "\n" +
+                "SoLuongDiKem:" + quantityIncluded + "\n" +
+                "SoNgayThue:" + rendDays);
+            break;
+        }
+        case 2: {
+            let chooseEdit = parseInt(prompt("1.Ten:" + name + "\n" +
+                "2.Cmnd:" + cmnd + "\n" +
+                "3.NgaySinh:" + birthday + "\n" +
+                "4.Email:" + email + "\n" +
+                "5.DiaChi:" + address + "\n" +
+                "6.DichVu:" + typerService + "\n" +
+                "7.Loaiphong:" + typerRoom + "\n" +
+                "8.LoaiKhachHang:" + typerCustomer + "\n" +
+                "9.GiamGia:" + discount + "\n" +
+                "10.SoLuongDiKem:" + quantityIncluded + "\n" +
+                "11.SoNgayThue:" + rendDays));
+
+            switch (chooseEdit) {
+                case 1: {
+                    name = prompt("enter name: ");
+                    break;
+                }
+                case 2: {
+                    cmnd = prompt("enter name:");
+                    break;
+                }
+                case 3: {
+                    birthday = prompt("enter name:");
+                    break;
+                }
+                case 4: {
+                    email = prompt("enter name:");
+                    break;
+                }
+                case 5: {
+                    address = prompt("enter name:");
+                    break;
+                }
+                case 6 : {
+                    typerService = prompt("enter name:");
+                    break;
+                }
+                case 7 : {
+                    typerRoom = prompt("enter name: ");
+                    break;
+                }
+                case 8: {
+                    typerCustomer = prompt("enter name:");
+                    break;
+                }
+                case 9 : {
+                    discount = prompt("enter name:");
+                    break;
+                }
+                case 10 : {
+                    quantityIncluded = prompt("enter name: ");
+                    break;
+                }
+                case 11: {
+                    rendDays = prompt("enter name: ");
+                    break;
+                }
+                default : {
+                    alert("failde");
+                }
+            }
+            alert("Ten:" + name + "\n" +
+                "Cmnd:" + cmnd + "\n" +
+                "NgaySinh:" + birthday + "\n" +
+                "Email:" + email + "\n" +
+                "DiaChi:" + address + "\n" +
+                "DichVu:" + typerService + "\n" +
+                "Loaiphong:" + typerRoom + "\n" +
+                "LoaiKhachHang:" + typerCustomer + "\n" +
+                "GiamGia:" + discount + "\n" +
+                "SoLuongDiKem:" + quantityIncluded + "\n" +
+                "SoNgayThue:" + rendDays);
+            break;
+        }
+        case 3: {
+            let money = 0;
+            if (typerService === "villa") {
+                money = 500;
+            } else if (typerService === "house") {
+                money = 300;
+            } else if (typerService === "room") {
+                money = 100;
+            }
+            let temp = 0;
+            if (address === "Da Nang") {
+                temp += 20;
+            } else if (address === "Hue") {
+                temp += 10;
+            } else if (address === "Quang Nam") {
+                temp += 5;
+            }
+            alert("total Pay: " + (money * rendDays - temp));
+            break;
+        }
+    }
+
+</script>
+</body>
+</html>

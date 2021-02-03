@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <style>
+        body{
+            background-image: url("img/backgroud.jpg");
+        }
+    </style>
+</head>
+<body>
+<p>
+    <a th:href="@{/contract}">
+        Back to contract list
+    </a>
+</p>
+<div id="form" class="img">
+    <form  th:action="@{/contract/updateContract}" th:object="${contract}"
+           method="POST" novalidate="novalidate">
+        <input class="input-group mb-3" type="hidden" th:field="*{contractId}"/>
+        <div>
+            <label>Contract Start Date</label>
+            <input class="input-group mb-3" type="email" th:field="*{contractStartDate}"/>
+        </div>
+        <div>
+            <label>Contract End Date</label>
+            <input class="input-group mb-3" type="text" th:field="*{contractEndDate}"/>
+        </div>
+        <div>
+            <label>Contract Deposit</label>
+            <input class="input-group mb-3" type="text" th:field="*{contractDeposit}"/>
+        </div>
+        <div>
+            <label>Contract Total Money</label>
+            <input class="input-group mb-3" type="text" th:field="*{contractTotalMoney}"/>
+        </div>
+        <div>
+            <label>Employee</label>
+            <!--                <input class="input-group mb-3" type="text" th:field="*{rentType.ren_type_id}"/>-->
+            <select th:field="*{employee}" class="form-control"  name="Order">
+                <option th:each="employee2 : ${employee}"
+                        th:value="${employee2.employeeId}"
+                        th:text="${employee2.employeeName}">
+                </option>
+            </select>
+        </div>
+        <div>
+            <label>Customer</label>
+            <!--                <input class="input-group mb-3" type="text" th:field="*{serviceType.service_type_id}"/>-->
+            <select th:field="*{customer}" class="form-control" name="Order">
+                <option th:each="customer1 : ${customer}"
+                        th:value="${customer1.customerId}"
+                        th:text="${customer1.customerName}">
+                </option>
+            </select>
+        </div>
+        <div>
+            <label>Service</label>
+            <!--                <input class="input-group mb-3" type="text" th:field="*{service}"/>-->
+            <select th:field="*{service}" class="form-control" name="Order">
+                <option th:each="service1 : ${service}"
+                        th:value="${service1.serviceId}"
+                        th:text="${service1.serviceName}">
+                </option>
+            </select>
+        </div>
+        <input type="submit" value="Edit">
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sudungham</title>
+</head>
+<body>
+<script>
+    let array = ["!","@","#","%","^","&","+"];
+    let array1 = ["*","<",">","?",":","}","{"];
+    let index = prompt("");
+    function checkthearray() {
+        for (let i=0; i < array.length ; i++){
+            if (index == array[i]){
+                alert(array1[i])
+            }else if (index == array1[i]){
+                alert(array[i])
+            }else {
+                alert(-1);
+                break;
+            }
+        }
+    }
+    checkthearray();
+</script>
+</body>
+</html>

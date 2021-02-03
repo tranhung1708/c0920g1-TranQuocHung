@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="servlet-api-2.5-6.0.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Thi_module_3/web/servlet-api-2.5-6.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

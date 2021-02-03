@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Furama</title>
+    <link rel="stylesheet" href="famurast.css">
+
+
+
+</head>
+<body class="img">
+<form>
+    <table class="maunen" ; width="50%" ; style="margin: 200px">
+        <tr>
+            <th colspan="4"><h3>Customer information</h3></th>
+        </tr>
+        <tr>
+            <td>First and last name</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td><select id="Gender">
+                <option>Nam</option>
+                <option>Nu</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Level</td>
+            <td><select id="lever">
+                <option>Trung Cap</option>
+                <option>Cao Dang</option>
+                <option>Dai Hoc</option>
+                <option>Sau Dai Hoc</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td>phone number</td>
+            <td><input type="number" id="phone"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input id="email" type="text"></td>
+        </tr>
+        <tr>
+            <td>ID card</td>
+            <td><input type="number" id="Id"></td>
+        </tr>
+        <tr>
+            <td>Date of birth</td>
+            <td><input type="date" id="Date"></td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td><select id="Location">
+                <option>Le Tan</option>
+                <option>Phuc Vu</option>
+                <option>Chuyen Vien</option>
+                <option>Giam Sat</option>
+                <option>Quan Ly</option>
+                <option>Giam Doc</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            <td><input type="number" id="Salary"></td>
+        </tr>
+        <tr>
+            <td>Date of booking</td>
+            <td><input type="date" id="Datebook"></td>
+            <td>Number day<input type="number" id="number"></td>
+            <td>discount <input type="number" id="discount"></td>
+        </tr>
+        <tr>
+            <td>Rental services</td>
+            <td>
+            <select id="rental">
+                <option value="500">Villa 500$/ 1 ngày</option>
+                <option value="300">House 300$/ 1 ngày</option>
+                <option value="100">Room 100$/ 1 ngày</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" onclick="submitForm()" value="Submit">
+                <input type="reset" value="Reset">
+            </td>
+
+        </tr>
+    </table>
+</form>
+<p id="displayName"></p>
+<p id="displayEmail"></p>
+<p id="displayPhone"></p>
+<p id="displayGender"></p>
+<p id="displayLever"></p>
+<p id="displayId"></p>
+<p id="displayDate"></p>
+<p id="displayLocation"></p>
+<p id="displaySalary"></p>
+<p id="displayDatebook"></p>
+<p id="displayRental"></p>
+<p id="displayNumber"></p>
+<p id="displayResult"></p>
+<p id="displaydiscount"></p>
+</body>
+<script src="famuray.js"></script>
+</html>

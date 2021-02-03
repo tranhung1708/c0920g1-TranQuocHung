@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/updateGiaoDich}" th:object="${giaoDich}" method="post" novalidate="novalidate" >
+        <input type="hidden" th:field="*{idGiaoDich}">
+
+    <div>
+        <label>Tên Giao Dịch</label>
+        <input type="text" th:field="*{tenGiaoDich}">
+    </div>
+    <div>
+        <label>Loại Giao Dịch</label>
+        <input type="text" th:field="*{loaiGiaoDich}">
+    </div>
+    <div>
+        <label>Đơn Giá</label>
+        <input type="number" th:field="*{donGia}">
+    </div>
+    <div>
+        <label>Ngày Giao Dịch</label>
+        <input type="date" th:field="*{ngayGiaoDich}">
+    </div>
+    <div>
+        <label>Khách Hàng</label>
+        <input type="text" th:field="*{khachHang.maKhachHang}">
+    </div>
+    <div>
+        <button type="submit">Xác Nhận</button>
+    </div>
+</form>
+</body>
+</html>

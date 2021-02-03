@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body>
+<div><h1 style="color: #1c7430 ; margin-left: 440px;">Danh Sách Câu Hỏi</h1></div>
+<a th:href="@{/create}">
+    <button type="button" class="btn btn-primary">Thêm Mới</button>
+</a>
+
+<form class="form-inline my-2 my-lg-0" th:action="@{/listCauHoi}">
+    <div class="dropdown row">
+        <input class="form-control mr-sm-2" type="search" th:name="tieuDe" placeholder="Search"
+               aria-label="Search">
+        <!--        <input class="form-control mr-sm-2" type="search" th:name="nameService" placeholder="Search"-->
+        <!--               aria-label="Search">-->
+        <select class="btn btn-primary dropdown-toggle" name="loaiCauHoi" id="nameService">
+            <option value="Học Tập">Học Tập</option>
+            <option value="Khác">Khác</option>
+            <option value="Giáo Vụ">Giáo Vụ</option>
+        </select>
+        <div>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </div>
+    </div>
+</form>
+<table style="width: 100% ; background-color: #343a40 ; color: white" class="table table-danger" border="1">
+    <thead>
+    <tr>
+        <th>STT</th>
+        <th>Tiêu Đề</th>
+        <th>Ngày Đăng</th>
+        <th>Loại Câu Hỏi</th>
+        <th>Người Hỏi</th>
+        <th>Người Đáp</th>
+        <th>Tình Trạng</th>
+        <th>Tính Năng</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cauHoi:${cauHoiList}">
+        <td th:text="${cauHoi.idCauHoi}"></td>
+        <td th:text="${cauHoi.tieuDe}"></td>
+        <td th:text="${cauHoi.ngayDang}"></td>
+        <td th:text="${cauHoi.loaiCauHoi}"></td>
+        <td th:text="${cauHoi.nguoiHoi.tenNguoiHoi}"></td>
+        <td th:text="${cauHoi.nguoiDap.tenNguoiDap}"></td>
+        <td th:text="${cauHoi.tinhTrang}"></td>
+        <td><a th:href="@{/edit/{id}(id=${cauHoi.idCauHoi})}">
+            <button class="btn btn-light" type="button" th:href="@{/edit/{id}(id=${cauHoi.idCauHoi})}">EDIT</button>
+        </a>
+        </td>
+<!--        <td><a th:href="@{/{id}/view(id=${()})}">view</a></td>-->
+        <td>
+            <button data-toggle="modal" th:data-target="'#a'+${cauHoi.getIdCauHoi()}"
+                    class="btn btn-outline-danger">
+                Delete
+            </button>
+            <div class="modal fade" th:id="'a'+${cauHoi.getIdCauHoi()}" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="color: black">
+                            Do you want to delete <p th:text="${cauHoi.tieuDe}"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <a th:href="@{/delete/{id}(id=${cauHoi.idCauHoi})}">
+                                <button type="button" class="btn btn-primary">Delete</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </tr>
+    </tbody>
+</table>
+
+<div>
+    <a class="btn btn-dark"
+       th:href="@{'/listCauHoi'(page=${cauHoiList.number - 1},keyword = ${nameSearchAfterSearch})} "
+       th:if="${cauHoiList.hasPrevious()}">Previous</a>
+    <span th:text="${cauHoiList.number + 1}"></span>/<span th:text="${cauHoiList.totalPages}"></span>
+    <a class="btn btn-dark"
+       th:href="@{'/listCauHoi'(page=${cauHoiList.number + 1},keyword = ${nameSearchAfterSearch})}"
+       th:if="${cauHoiList.hasNext()}">Next</a>
+</div>
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

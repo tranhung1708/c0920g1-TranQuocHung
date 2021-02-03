@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>songuyento</title>
+</head>
+<body>
+<script>
+let number;
+let check = false;
+do {
+    number = parseInt(prompt("nhap number"));
+} while (isNaN(number))
+    for (let i=2 ; i <= Math.sqrt(number);i++){
+        if (number%i ===0){
+            check =true;
+            break;
+        }
+    }
+if (check){
+    alert("day khong phai la so nguyen to: ");
+}else {
+    alert("day la so nguyen to")
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<p>
+    <a th:href="@{/contractDetail/contractDetailList}">
+        Back to contract list
+    </a>
+</p>
+
+<div class="container-fluid" >
+    <form th:action="@{/contractDetail/saveContractDetail}" th:object="${contractDetailList}"
+          method="POST" novalidate="novalidate">
+        <div>
+            <label>Contract Detail Id</label>
+            <input class="input-group mb-3" type="text" th:field="*{contractDetailId}"/>
+        </div>
+        <div>
+            <label>Contract Id</label>
+<!--            <input class="input-group mb-3" type="text" th:field="*{contract.contractId}"/>-->
+            <select th:field="*{contract}" class="form-control" name="Order">
+                <option th:each="contract1 : ${contract}"
+                        th:value="${contract1.contractId}"
+                        th:text="${contract1.contractId}">
+                </option>
+            </select>
+        </div>
+        <div>
+            <label>Attach Service</label>
+<!--            <input class="input-group mb-3" type="text" th:field="*{attachService.attachServiceId}"/>-->
+            <select th:field="*{attachService}" class="form-control" name="Order">
+                <option th:each="attachService1 : ${attachService}"
+                        th:value="${attachService1.attachServiceId}"
+                        th:text="${attachService1.attachServiceName}">
+                </option>
+            </select>
+        </div>
+        <input class="btn badge-dark" type="submit" value="Save">
+    </form>
+</div>
+</body>
+</html>

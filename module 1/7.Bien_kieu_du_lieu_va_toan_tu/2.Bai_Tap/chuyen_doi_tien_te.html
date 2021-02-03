@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doitiente</title>
+</head>
+<body>
+<table>
+        <tr>
+            <td><b>Amount</b></td>
+            <td><b>From Currency</b></td>
+            <td><b>To Currency</b></td>
+            <td><b></b></td>
+        </tr>
+        <tr>
+            <td><input id="num" type="text" name="text"></td>
+            <td>
+                <select id="from">
+                    <option>VND</option>
+                    <option>USD</option>
+                </select>
+        </td>
+            <td>
+                <select id="to">
+                        <option>USD</option>
+                        <option>VND</option>
+                </select>
+            </td>
+            <td><button onclick="convert()">Convert</button></td>
+        </tr>
+        <tr>
+            <td><p id="result">Result:</p></td>
+        </tr>
+</table>
+<script src="tien-te.js"></script>
+</body>
+</html>

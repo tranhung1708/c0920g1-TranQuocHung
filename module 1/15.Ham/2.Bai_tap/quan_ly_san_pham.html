@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quanlysanpham</title>
+</head>
+<body>
+<script>
+    let arrayProduct =["Sony","Nokia","SamSung","Iphone"];
+    function displayProduct(arrayProduct) {
+        document.body.innerHTML ="";
+        let temp="<input type='text' id='addNewProduct'><input type='button' value='Add' onclick='addNewProduct()'></br>"
+        temp+="<table>";
+        for(let i=0;i<arrayProduct.length;i++) {
+            temp+="<tr><td>"+arrayProduct[i]+"</td>" +
+                "<td><input type='button' value='Edit' onclick='viewFormEditProduct("+i+")'></td>" +
+                "<td><input type='button' value='Delete' onclick='deleteProduct("+i+") '></td>" +
+                "</tr>"
+        }
+        temp+="</table>"
+        document.write(temp);
+    }
+    function addNewProduct() {
+        arrayProduct.push(document.getElementById("addNewProduct").value);
+        displayProduct(arrayProduct)
+    }
+    function viewFormEditProduct(index) {
+        displayProduct(arrayProduct)
+        let temp = "<input id='editProduct' type='text' value='"+arrayProduct[index]+"'><input type='button' value='Submit' onclick='editProduct("+index+")'>"
+        document.write(temp);
+    }
+    function editProduct(index) {
+        arrayProduct[index] = document.getElementById("editProduct").value;
+        displayProduct(arrayProduct)
+    }
+    function deleteProduct(index) {
+        if(confirm("Bạn có muốn xóa đt "+arrayProduct[index]+" này không?")) {
+            arrayProduct.splice(index,1);
+        }
+        displayProduct(arrayProduct);
+    }
+    displayProduct(arrayProduct)
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yeucau6</title>
+    <script src="yeu_cau_6_task2.js"></script>
+</head>
+<body>
+<script>
+    let regexCmnd = /^[\d]{8,8}$/;
+    let regexEmail=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    let regexBirthday = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+    let arrListEmployees = [];
+    function displayEmployee() {
+        let choose = parseInt(prompt("1.Add new Employees" + "\n2.Display information Employees" + "\n.3.Salary of Employees" + "\n4.Exit"));
+        switch (choose) {
+            case 1 : {
+                AddnewEmployees();
+                break;
+            }
+            case 2 : {
+                displayEmployees();
+                break;
+            }
+            case 3 : {
+                SalaryofEmployees();
+                break;
+            }
+            case 4 : {
+                Exit();
+                break;
+            }
+            default : {
+                alert("failed");
+            }
+        }
+    }
+
+    function AddnewEmployees() {
+        let checkValid = false;
+        let name ;
+        let tempName1 = " ";
+        name = prompt("Input name:");
+        name=name.trim().toLowerCase();
+        for (let i = 0; i < name.length; i++){
+            if (name.charAt(i)===" " && name.charAt(i+1)===" "){
+                continue;
+            }
+            if (i===0 || name.charAt(i-1)===" "){
+                tempName1+=name.charAt(i).toUpperCase();
+                continue;
+            }
+            tempName1+= name.charAt(i);
+        }
+        name = tempName1;
+
+        let birthday ;
+        do {
+            birthday = prompt("birthday");
+            if (birthday.match(regexBirthday)){
+                checkValid = true;
+            }else {
+                alert("ngay sinh khong hop le. Moi ban nhap lai")
+            }
+        }while (!checkValid);
+        checkValid=false;
+        let cmnd ;
+        do {
+            cmnd = prompt("cmnd");
+            if (cmnd.match(regexCmnd)){
+                checkValid = true;
+            }else {
+                alert("cmnd khong hop le. moi nhap lai")
+            }
+        }while (!checkValid);
+        let numberphone = prompt("numberphone");
+        let email ;
+        do {
+            email = prompt("email");
+            if (email.match(regexEmail)){
+                checkValid = true
+            }else {
+                alert("email khong hop le.Vui long nhap lai")
+            }
+        }while (!checkValid);
+        let lever = prompt("lever");
+        let position = prompt("position");
+        let employee = new Employee(name,birthday,cmnd,numberphone,email,lever,position);
+        arrListEmployees.push(employee);
+        alert("da them thanh cong");
+        displayEmployee();
+    }
+    function displayEmployees() {
+        let temp = "";
+        for (let i = 0 ; i < arrListEmployees.length; i++){
+            temp += i+".Name"+ arrListEmployees[i].getName() +"\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        alert("Name:" + arrListEmployees[chooseDisplay].getName() + "\n" +
+            "Cmnd:" + arrListEmployees[chooseDisplay].getCmnd() + "\n" +
+            "Birthday:" + arrListEmployees[chooseDisplay].getBirthday() + "\n" +
+            "Email:" + arrListEmployees[chooseDisplay].getEmail() + "\n" +
+            "NumberPhone:" + arrListEmployees[chooseDisplay].getNumberphone() + "\n" +
+            "Lever:" + arrListEmployees[chooseDisplay].getLever() + "\n" +
+            "position:" + arrListEmployees[chooseDisplay].getPosition() );
+
+        displayEmployee();
+    }
+    function SalaryofEmployees() {
+        let temp1 = "";
+        for (let i =0 ; i < arrListEmployees.length ; i++){
+            temp1 += i+"name"+arrListEmployees[i].getName()+"\n";
+        }
+        let  choseEmployees = parseInt(prompt(temp1));
+        console.log(choseEmployees);
+        alert("muc luong hien tai" +  arrListEmployees[choseEmployees].getSalary());
+        displayEmployee();
+    }
+    function Exit() {
+
+    }
+    displayEmployee();
+</script>
+</body>
+</html>

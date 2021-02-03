@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="datatables">
+    <ANNOTATIONS>
+      <root url="file://D:/table_sortpage/table_sortpage/datatables" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://D:/table_sortpage/table_sortpage/datatables" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://D:/table_sortpage/table_sortpage/datatables" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="file://D:/table_sortpage/table_sortpage/datatables" />
+    </NATIVE>
+    <SOURCES>
+      <root url="file://D:/table_sortpage/table_sortpage/datatables" />
+    </SOURCES>
+    <jarDirectory url="file://D:/table_sortpage/table_sortpage/datatables" recursive="false" />
+    <jarDirectory url="file://D:/table_sortpage/table_sortpage/datatables" recursive="false" type="SOURCES" />
+  </library>
+</component>

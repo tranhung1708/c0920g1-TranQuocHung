@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ontap</title>
+</head>
+<body>
+<script>
+    let arr = [1,true,"A",2,false,10,"B"];
+    let number = [];
+    let arrString = [];
+    let arrBoolean = [];
+    for (let i = 0 ; i < arr.length ; i++){
+        if ((typeof arr[i]) === "number"){
+            number.push(arr[i]);
+        }else if ((typeof arr[i])=== "string"){
+            arrString.push(arr[i]);
+        }else{
+            arrBoolean.push(arr[i]);
+        }
+    }alert(number);
+    alert(arrString);
+    alert(arrBoolean);
+
+    </script>
+<!--<script>-->
+<!--&lt;!&ndash;    let abc = [ 1,2,3,4,5,6];&ndash;&gt;-->
+<!--&lt;!&ndash;    let k = 4 ;&ndash;&gt;-->
+<!--&lt;!&ndash;    for (let i = k; i < abc.length ; i++){&ndash;&gt;-->
+<!--&lt;!&ndash;        abc[i] = abc [ i+1];&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;    alert(abc);&ndash;&gt;-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+</body>
+</html>

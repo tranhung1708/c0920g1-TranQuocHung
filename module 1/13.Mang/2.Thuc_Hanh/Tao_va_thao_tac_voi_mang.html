@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thaotacvoimang</title>
+</head>
+<body>
+<input type="text" id="txvalue">
+<input type="button" id="btadd" value="add" onclick="add_element_to_aray();">
+<input type="button" id="btDisplay" value="Display" onclick="display_array();">
+<script>
+    let x = 0;
+    let array = Array();
+    function add_element_to_aray() {
+        array[x] = document.getElementById("txvalue").value;
+        alert("element: " + array[x]+ "added at index" + x);
+        x++;
+        document.getElementById("txvalue").value ="";
+    }
+    function display_array() {
+        let e   = "<hr/>";
+        for (let i = 0 ; i < array.length;i++){
+            e += "element" + i + "=" + array[i] + "</br>";
+        }
+        document.getElementById("result").innerText = e ;
+    }
+
+</script>
+</body>
+</html>

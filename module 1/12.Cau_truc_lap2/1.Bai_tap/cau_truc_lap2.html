@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>taobangcuchuong</title>
+</head>
+<body>
+<table>
+<script>
+let bangcuchuong;
+        bangcuchuong = "<table border='1' width='300' cellspacing='0' cellpadding='3'>"
+             for (i =2 ; i <=9 ; i++){
+         bangcuchuong = bangcuchuong + "<tr>";
+             for (j = 2; j <= 9 ; j++){
+        bangcuchuong = bangcuchuong + "<td>" + j + "x" + i + "=" + (j*i);
+    }
+        bangcuchuong =bangcuchuong + "</tr>"
+    }
+bangcuchuong =bangcuchuong + "</table>";
+    document.write(bangcuchuong);
+</script>
+</table>
+</body>
+</html>

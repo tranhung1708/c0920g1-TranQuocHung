@@ -1,0 +1,37 @@
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/list}">
+    <label>Input First Name want Search: </label>
+    <input type="text" name="keyword">
+    <button type="submit">Search</button>
+</form>
+<a th:href="@{/create}">Add new Customer</a>
+<table>
+    <thead>
+    <th>Id</th>
+    <th>firstName</th>
+    <th>lastName</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+     <tr th:each="customer:${customerList}">
+         <td th:text="${customer.id}"></td>
+         <td th:text="${customer.firstName}"></td>
+         <td th:text="${customer.lastName}"></td>
+         <td>
+             <a th:href="@{/delete/{id}(id=${customer.getId()})}">Delete</a>
+             <a th:href="@{/update/{id}(id=${customer.getId()})}">Edit</a>
+         </td>
+     </tr>
+    </tbody>
+</table>
+<a th:if="${customerList.hasPrevious()}" th:href="@{/list(page = ${customerList.number - 1}, keyword = ${keywordAfterCheck})}">Previous</a>
+<span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
+<a th:if="${customerList.hasNext()}" th:href="@{/list(page = ${customerList.number + 1}, keyword = ${keywordAfterCheck})}">Next</a>
+</body>
+</html>

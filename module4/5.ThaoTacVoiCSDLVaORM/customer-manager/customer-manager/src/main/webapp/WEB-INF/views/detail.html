@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<h3>Modify Customer</h3>
+<p>
+    <a th:href="@{/}">
+        Back to customer list
+    </a>
+</p>
+<div id="detail">
+    <form >
+        <div>
+            <p>Id:<span th:text="${customer.id}"></span> </p>
+        </div>
+        <div>
+            <p>Name:<span th:text="${customer.name}"></span> </p>
+        </div>
+        <div>
+            <p>Email:<span th:text="${customer.email}"></span> </p>
+        </div>
+        <div>
+            <p>Address<span th:text="${customer.address}"></span> </p>
+        </div>
+    </form>
+</div>
+<footer th:replace="layout :: footer"></footer>
+</body>
+</html>
+</body>
+</html>

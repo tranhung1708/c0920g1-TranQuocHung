@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yeucau6</title>
+    <script type="text/javascript" src="yeu_cau6.js"></script>
+</head>
+<body>
+<script>
+
+    let regexCmnd = /^[\d]{8,8}$/;
+    let regexBirthday = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+    let regexEmail=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    let arrListCustomer = [];
+    displayMainMenu();
+    function displayMainMenu() {
+        let choose= parseInt(prompt("1.Add new Customer" + "\n2.Display Information Customer" + "\n3.Display total pays Customer"+"\n.4.Edit Information Customer"+ "\n5.Delete Customer" + "\n6.Exit" ));
+        switch (choose) {
+            case 1:{
+                addNewCustomer();
+                break;
+            }
+            case 2 :{
+                displayCustomer();
+                break;
+            }
+            case 3:{
+                displayTotal();
+                break;
+            }
+            case 4 :{
+                editCustomer();
+                break;
+            }
+            case 5 :{
+                deleteCustomer();
+                break;
+            }
+            default:{
+                alert("Failed")
+            }
+        }
+    }
+
+    function addNewCustomer() {
+        let checkValid = false;
+        let cus = new Customer();
+        let name = prompt("name");
+        let cmnd;
+        do {
+            cmnd = prompt("cmnd");
+            if (cmnd.match(regexCmnd)){
+                checkValid = true;
+            }else {
+                alert("cmnd khong hop le. moi nhap lai")
+            }
+        }while (!checkValid);
+        checkValid = false;
+        let birthday;
+        do {
+            birthday = prompt("birthday");
+            if (birthday.match(regexBirthday)){
+                checkValid = true;
+            }else {
+                alert("ngay sinh khong hop le. Moi ban nhap lai")
+            }
+        }while (!checkValid);
+        checkValid=false;
+        let email;
+        do {
+            email = prompt("email");
+            if (email.match(regexEmail)){
+                checkValid = true
+            }else {
+                alert("email khong hop le.Vui long nhap lai")
+            }
+        }while (!checkValid);
+        let address = prompt("address");
+        let typeService = prompt("servie");
+        let typeRoom = prompt("room");
+        let typeCustomer = prompt("customer");
+        let discount = prompt("discount");
+        let quantityIncluded = prompt("quantity");
+        let rentDays = prompt("rentdays");
+        cus.setName(name);
+        cus.setCmnd(cmnd);
+        cus.setBirthday(birthday);
+        cus.setEmail(email);
+        cus.setAddress(address);
+        cus.setTypeService(typeService);
+        cus.setTypeRoom(typeRoom);
+        cus.setTypeCustomer(typeCustomer);
+        cus.setDiscount(discount);
+        cus.setQuantityIncluded(quantityIncluded);
+        cus.setRentdays(rentDays);
+        arrListCustomer.push(cus);
+        alert("ban da them thanh cong");
+    }
+    displayMainMenu();
+    function deleteCustomer() {
+        let temp = "";
+        for (let i = 0 ; i < arrListCustomer.length; i++){
+            temp += i+".Name"+ arrListCustomer[i].getName +"\n";
+        }
+        let chooseDelete = parseInt(prompt(temp));
+        let check = parseInt(prompt("are you want delete customer." + "\n1.yes 2.no"));
+        arrListCustomer.splice(chooseDelete,1);
+        if (check ===1 ){
+            arrListCustomer.splice(chooseDelete,1);
+            alert("ban da xoa thanh cong");
+        }else {
+            alert("cancel")
+        }
+        displayMainMenu();
+    }
+    function editCustomer() {
+        let temp = "";
+        for (let i = 0 ; i < arrListCustomer.length; i++){
+            temp += i+".Name"+ arrListCustomer[i].setName +"\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        console.log(arrListCustomer);
+        let chooseEdit = parseInt(prompt("1.Ten:" + arrListCustomer[chooseDisplay].getName() + "\n" +
+            "2.Cmnd:" + arrListCustomer[chooseDisplay].getCmnd() + "\n" +
+            "3.NgaySinh:" + arrListCustomer[chooseDisplay].getBirthday() + "\n" +
+            "4.Email:" + arrListCustomer[chooseDisplay].getEmail() + "\n" +
+            "5.DiaChi:" + arrListCustomer[chooseDisplay].getAddress() + "\n" +
+            "6.DichVu:" + arrListCustomer[chooseDisplay].getTypeService() + "\n" +
+            "7.Loaiphong:" + arrListCustomer[chooseDisplay].getTypeRoom() + "\n" +
+            "8.LoaiKhachHang:" + arrListCustomer[chooseDisplay].getTypeCustomer() + "\n" +
+            "9.GiamGia:" + arrListCustomer[chooseDisplay].getDiscount() + "\n" +
+            "10.SoLuongDiKem:" + arrListCustomer[chooseDisplay].getQuantityIncluded() + "\n" +
+            "11.SoNgayThue:" + arrListCustomer[chooseDisplay].getRentdays()));
+
+        switch (chooseEdit) {
+            case 1: {
+                arrListCustomer[chooseDisplay].setName(prompt("enter name: "));
+                break;
+            }
+            case 2: {
+                arrListCustomer[chooseDisplay].setCmnd(prompt("enter cmnd: "));
+                break;
+            }
+            case 3: {
+                arrListCustomer[chooseDisplay].setBirthday(prompt("enter birthday: "));
+                break;
+            }
+            case 4: {
+                arrListCustomer[chooseDisplay].setEmail(prompt("enter email: "));
+                break;
+            }
+            case 5: {
+                arrListCustomer[chooseDisplay].setAddress(prompt("enter diachi: "));
+                break;
+            }
+            case 6: {
+                arrListCustomer[chooseDisplay].setTypeService(prompt("enter dichvu: "));
+                break;
+            }
+            case 7: {
+                arrListCustomer[chooseDisplay].setTypeRoom(prompt("enter loaiphong: "));
+                break;
+            }
+            case 8: {
+                arrListCustomer[chooseDisplay].setTypeCustomer(prompt("enter loaikhachhang: "));
+                break;
+            }
+            case 9: {
+                arrListCustomer[chooseDisplay].setDiscount(prompt("enter giamgia: "));
+                break;
+            }
+            case 10: {
+                arrListCustomer[chooseDisplay].setQuantityIncluded(prompt("enter soluongdikem: "));
+                break;
+            }
+            case 11: {
+                arrListCustomer[chooseDisplay].setRentdays(prompt("enter songaythue: "));
+                break;
+            }
+            default :{
+                alert("failed");
+            }
+        }
+
+        editCustomer()
+
+    }
+
+    function displayCustomer() {
+        let temp = "";
+        for (let i = 0 ; i < arrListCustomer.length; i++){
+            temp += i+".Name"+ arrListCustomer[i].getName() +"\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        alert("Ten:" + arrListCustomer[chooseDisplay].getName()+ "\n" +
+            "Cmnd:" + arrListCustomer[chooseDisplay].getCmnd() + "\n" +
+            "NgaySinh:" + arrListCustomer[chooseDisplay].getBirthday() + "\n" +
+            "Email:" + arrListCustomer[chooseDisplay].getEmail() + "\n" +
+            "DiaChi:" + arrListCustomer[chooseDisplay].getAddress() + "\n" +
+            "DichVu:" + arrListCustomer[chooseDisplay].getTypeService() + "\n" +
+            "Loaiphong:" + arrListCustomer[chooseDisplay].getTypeRoom() + "\n" +
+            "LoaiKhachHang:" + arrListCustomer[chooseDisplay].getTypeCustomer() + "\n" +
+            "GiamGia:" + arrListCustomer[chooseDisplay].getDiscount() + "\n" +
+            "SoLuongDiKem:" + arrListCustomer[chooseDisplay].getQuantityIncluded() + "\n" +
+            "SoNgayThue:" + arrListCustomer[chooseDisplay].getRentdays());
+        displayMainMenu()
+    }
+    function displayTotal() {
+        let temp = "";
+        for (let i = 0 ; i < arrListCustomer.length; i++){
+            temp += i+".Name"+ arrListCustomer[i].getName() +"\n";
+        }
+        let chooseCustomer = parseInt(prompt(temp));
+        console.log(chooseCustomer);
+        alert("tong tien phai tra" + arrListCustomer[chooseCustomer].getTotalPays());
+        displayMainMenu();
+    }
+</script>
+</body>
+</html>

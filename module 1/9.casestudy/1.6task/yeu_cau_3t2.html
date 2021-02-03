@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yeucua3t1</title>
+</head>
+<body>
+    <script>
+        let tempName=" ";
+        let name ;
+        name = prompt("Input name:");
+        name=name.trim().toLowerCase();
+        for (let i = 0; i < name.length; i++){
+            if (name.charAt(i)===" " && name.charAt(i+1)===" "){
+                continue;
+            }
+            if (i===0 || name.charAt(i-1)===" "){
+                tempName+=name.charAt(i).toUpperCase();
+                continue;
+            }
+            tempName+= name.charAt(i);
+        }
+        name = tempName;
+        alert(tempName)
+    </script>
+</body>
+</html>

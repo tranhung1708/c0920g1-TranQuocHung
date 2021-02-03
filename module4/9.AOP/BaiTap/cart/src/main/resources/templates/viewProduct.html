@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>View Product: <span th:text="${product.name_product}"></span></h1>
+<a href="/">Product list</a>
+<th:block th:if="${message}">
+    <h3> <p th:text="${message}"></p></h3>
+</th:block>
+<form th:action="@{/view-product/__${product.id_product}__}" method="post">
+    <table border="1">
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Product Image</th>
+            <th>Price</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td th:text="${product.id_product}"></td>
+            <td th:text="${product.name_product}"></td>
+            <td th:text="${product.image}"></td>
+            <td th:text="${product.price}"></td>
+        </tr>
+    </table>
+    <br>
+    <input type="submit" value="Add to cart">
+</form>
+<br>
+<a href="/cart">Go to cart</a>
+</body>
+</html>

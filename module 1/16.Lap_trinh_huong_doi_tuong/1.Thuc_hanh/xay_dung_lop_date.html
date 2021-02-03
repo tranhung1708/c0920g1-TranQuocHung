@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xaydunglopdate</title>
+</head>
+<body>
+<script>
+   class myDate {
+       constructor(day,month,year) {
+           this.day = day;
+           this.month = month;
+           this.year = year;
+       }
+       display1 (){
+           alert(this.day+'/'+this.month+"/"+this.year);
+       }
+       setDate(day,month,year){
+           this.day = day;
+           this.month = month;
+           this.year = year;
+       }
+       display2(){
+           alert(this.day + "/"+this.month + "/"+ this.year);
+       }
+   }
+   let date = new myDate(2,2,2002);
+   date.display1();
+   date.setDate(2,3,1234);
+   date.display2();
+</script>
+</body>
+</html>

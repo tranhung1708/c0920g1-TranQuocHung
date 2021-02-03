@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="checkbox" id="good" onclick="check(1)"> Good
+<input type="checkbox" id="fast" onclick="check(2)"> fast
+<input type="checkbox" id="cheap" onclick="check(3)"> cheap
+<script>
+    let good = document.getElementById("good");
+    let fast = document.getElementById("fast");
+    let cheap = document.getElementById("cheap");
+    function check(number) {
+        switch (number) {
+            case 1:
+                if (fast.checked && cheap.checked){
+                    fast.checked = false;
+                }
+                break;
+                case 2:
+                    if (good.checked && cheap.checked){
+                        cheap.checked = false;
+                    }
+                    break;
+                    case 3:
+                        if (good.checked && fast.checked){
+                            good.checked = false;
+                        }
+                        break;
+        }
+    }
+</script>
+</body>
+</html>

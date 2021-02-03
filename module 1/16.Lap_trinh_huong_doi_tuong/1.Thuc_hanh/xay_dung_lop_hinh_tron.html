@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xaydunglophinhtron</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(radius,color){
+            this.radius = radius;
+            this.color = color;
+            }
+            getRadius(){
+            return this.radius ;
+            }
+            getColor(){
+           return this.color;
+            }
+            getAre(){
+            return Math.PI * this.radius * this.radius;
+            }
+    }
+    let Circle1 = new Circle(2, "red");
+    alert(Circle1.getRadius());
+    alert(Circle1.getColor());
+    alert(Circle1.getAre());
+</script>
+</body>
+</html>
