@@ -46,8 +46,8 @@ function main() {
 /**
  * Data types
  */
-/*
-function main() {
+
+function main3() {
   let message: string;
   let total: number = 100;
   let isProduction = true;
@@ -78,9 +78,11 @@ function main() {
   unknown = 'changed';
 
   const post: IPost = {
-
+    id:"abc",
+    title:"bcd",
+    body:"hung"
   };
-  message = 50;
+  message = "50";
 
   function getPost(postId: string): IPost {
     // do something to retrieve post
@@ -92,7 +94,7 @@ function main() {
     } as IPost;
   }
 }
- */
+
 
 function main() {}
 

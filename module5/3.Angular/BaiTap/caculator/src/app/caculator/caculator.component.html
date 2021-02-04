@@ -1,0 +1,25 @@
+<h1>Máy Tính Của Tui</h1>
+<div>
+  <input type="number" class="form-input"
+         [value]="first"
+         (change)="onFirstChange($event.target.value)">
+  <select
+    class="form-input"
+    [value]="operator"
+    (change)="onSelectChange($event.target.value)">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <input type="number" class="form-input"
+         [(ngModel)]="second">
+</div>
+<div>
+  <button class="form-input" (click)="calculate()">
+    Thực thi
+  </button>
+</div>
+<div class="output">
+  {{output}}
+</div>

@@ -1,0 +1,9 @@
+<p>color-pick !</p>
+<div>
+  <label>Ưng màu nào chọn màu nấy:</label>
+  <input [value]="background" type="color" (change)="onChange($event.target.value)">
+</div>
+
+<p>Hiển thị:</p>
+<div class="color-preview" style="width: 100px; height: 100px;" [style.background]="background"></div>
+

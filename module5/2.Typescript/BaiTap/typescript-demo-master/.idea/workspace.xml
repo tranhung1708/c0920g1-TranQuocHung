@@ -2,44 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08e659d9-0160-40fd-be5f-e0a814629a36" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../1.UX_UI/BaiTap/Newsletter/ColoSchemeForNewsletter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../1.UX_UI/BaiTap/Simplify your life/BuildLandingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../1.UX_UI/BaiTap/Simplify your life/BuildLandingPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/browserslist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/e2e/protractor.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/e2e/src/app.e2e-spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/e2e/src/app.po.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/e2e/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/app/app-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../my-project-demo/tslint.json" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai_tap/c09g-typescript/Iuser.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai_tap/c09g-typescript/item.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/typescript-demo-master/src/fundamentals.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typescript-demo-master/src/fundamentals.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/typescript-demo-master/src/scss/Employee.ts" beforeDir="false" afterPath="$PROJECT_DIR$/typescript-demo-master/src/scss/Employee.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
@@ -54,7 +33,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -62,7 +41,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="D:\c0920g1-TranQuocHung\module5\2.Typescript\BaiTap\typescript-demo-master\typescript-demo-master\node_modules\typescript\lib" />
   </component>
   <component name="RunManager">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:50870/typescript-demo-master/typescript-demo-master/src/exercise/index.html" useBuiltInWebServerPort="true">
@@ -85,16 +64,41 @@
       <option name="presentableId" value="Default" />
       <updated>1612333707952</updated>
       <workItem from="1612333709086" duration="1040000" />
+      <workItem from="1612336543088" duration="941000" />
+      <workItem from="1612337507873" duration="135000" />
+      <workItem from="1612408464899" duration="1801000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../bai_tap/c09g-typescript/Iuser.js" />
+        <option value="$PROJECT_DIR$/../bai_tap/c09g-typescript/item.js" />
+      </list>
+    </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="420" y="100" key="FileChooserDialogImpl" timestamp="1612334748409">
+    <state x="420" y="100" key="FileChooserDialogImpl" timestamp="1612410643408">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="420" y="100" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1612334748409" />
+    <state x="420" y="100" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1612410643408" />
+    <state width="1257" height="166" key="GridCell.Tab.0.bottom" timestamp="1612337491580">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1257" height="166" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1612337491580" />
+    <state width="1257" height="166" key="GridCell.Tab.0.center" timestamp="1612337491580">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1257" height="166" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1612337491580" />
+    <state width="1257" height="166" key="GridCell.Tab.0.left" timestamp="1612337491580">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1257" height="166" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1612337491580" />
+    <state width="1257" height="166" key="GridCell.Tab.0.right" timestamp="1612337491580">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1257" height="166" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1612337491580" />
   </component>
 </project>
