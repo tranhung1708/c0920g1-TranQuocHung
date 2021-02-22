@@ -1,0 +1,43 @@
+<h2 class="text-center mt-2 ">Customer List</h2>
+<div class="container">
+  <table class="table" border="1px">
+    <thead>
+    <tr>
+      <th>ID Customer</th>
+      <th>ID Customer Type</th>
+      <th>Họ Tên Khách Hàng</th>
+      <th>Ngày Sinh</th>
+      <th>Giới Tính</th>
+      <th>Địa Chỉ</th>
+      <th>Chứng Minh Nhân Dân</th>
+      <th>Số Điện Thoại</th>
+      <th>Email</th>
+      <th>SỬA</th>
+      <th>XÓA</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let customer of customerList">
+      <td>{{customer.id}}</td>
+      <td>{{customer.customerType.id}}</td>
+      <td>{{customer.name}}</td>
+      <td>{{customer.dateOfBirth}}</td>
+      <td>{{customer.gender}}</td>
+      <td>{{customer.address}}</td>
+      <td>{{customer.idCard}}</td>
+      <td>{{customer.phoneNumber}}</td>
+      <td>{{customer.email}}</td>
+      <td>
+        <button class="btn btn-outline-primary" (click)="returnCustomer(customer)" data-bs-toggle="modal"
+                data-bs-target="#modalUpdate">Update
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-outline-dark" (click)="returnCustomer(customer)" data-bs-toggle="modal"
+                data-bs-target="#modalDelete">Delete
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
