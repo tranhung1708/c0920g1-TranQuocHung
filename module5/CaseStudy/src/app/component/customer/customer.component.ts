@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {ICustomer} from '../../model/customer';
 import {CustomerService} from '../../service/customer.service';
 
-
+@Injectable({ providedIn: 'root' })
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',

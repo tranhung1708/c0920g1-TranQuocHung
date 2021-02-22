@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {ICustomer} from '../../../model/customer';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {CustomerTypeService} from '../../../service/customer-type.service';
 import {ICustomerType} from '../../../model/customer-type';
 import {FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import {CustomerService} from '../../../service/customer.service';
 import {Router} from '@angular/router';
 import {CustomerComponent} from '../customer.component';
+
 
 @Component({
   selector: 'app-customer-create',
@@ -24,7 +24,7 @@ export class CustomerCreateComponent implements OnInit {
 
   constructor(private customerTypeService: CustomerTypeService,
               private customerService: CustomerService,
-              private router: Router,
+              // private router: Router,
               private customerComponent: CustomerComponent) {
   }
 
