@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "applocal"
+    }
+  },
+  "defaultProject": "applocal",
+  "cli": {
+    "analytics": false
+  }
 }
