@@ -1,20 +1,6 @@
 {
   "customer": [
     {
-      "id": 1,
-      "name": "123123213",
-      "dateOfBirth": "2000-11-01",
-      "gender": "male",
-      "address": "Le Thuy",
-      "idCard": "044200002961",
-      "phoneNumber": "3231312",
-      "email": "eeeee.1999@gmail.co4",
-      "customerType": {
-        "id": 3,
-        "name": "Gold"
-      }
-    },
-    {
       "id": 2,
       "name": "124124214",
       "dateOfBirth": "2000-01-01",
@@ -55,28 +41,28 @@
         "name": "Member"
       },
       "id": 5
-    }
-  ],
-  "customerType": [
-    {
-      "id": 1,
-      "name": "Member"
     },
     {
-      "id": 2,
-      "name": "Sliver"
+      "name": "",
+      "dateOfBirth": "",
+      "gender": "",
+      "address": "",
+      "idCard": "",
+      "phoneNumber": "",
+      "email": "",
+      "customerType": 1,
+      "id": 6
     },
     {
-      "id": 3,
-      "name": "Gold"
-    },
-    {
-      "id": 4,
-      "name": "Diamond"
-    },
-    {
-      "id": 5,
-      "name": "Platinum"
+      "name": "",
+      "dateOfBirth": "",
+      "gender": "",
+      "address": "",
+      "idCard": "",
+      "phoneNumber": "",
+      "email": "",
+      "customerType": 1,
+      "id": 7
     }
   ]
 }

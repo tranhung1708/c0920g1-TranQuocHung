@@ -7,13 +7,15 @@ import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {CustomerCreateComponent} from './component/customer/customer-create/customer-create.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { CustomerDeleteComponent } from './component/customer/customer-delete/customer-delete.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerComponent,
-    CustomerCreateComponent
+    CustomerCreateComponent,
+    CustomerDeleteComponent
   ],
   imports: [
     BrowserModule,

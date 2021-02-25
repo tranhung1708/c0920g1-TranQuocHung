@@ -6,7 +6,7 @@ import {CustomerService} from '../../../service/customer.service';
 import {Router} from '@angular/router';
 import {CustomerComponent} from '../customer.component';
 
-
+@Injectable({providedIn: 'root'})
 @Component({
   selector: 'app-customer-create',
   templateUrl: './customer-create.component.html',
@@ -20,7 +20,7 @@ export class CustomerCreateComponent implements OnInit {
 
   customerCreateForm: FormGroup;
 
-  customerTypeList: ICustomerType[];
+  customerTypeList: ICustomerType[] = [];
 
   constructor(private customerTypeService: CustomerTypeService,
               private customerService: CustomerService,
@@ -32,7 +32,7 @@ export class CustomerCreateComponent implements OnInit {
     this.getAllCustomerType();
 
     this.customerCreateForm = new FormGroup({
-        name: new FormControl('', [Validators.required, Validators.pattern(/^([A-Z][a-z]+)(\s[A-Z][a-z]+)*$/), Validators.minLength(6)]),
+        name: new FormControl('', [Validators.required, Validators.pattern(/[A-Za-z+]/), Validators.minLength(6)]),
         dateOfBirth: new FormControl(''),
         gender: new FormControl(''),
         address: new FormControl(''),
@@ -54,8 +54,7 @@ export class CustomerCreateComponent implements OnInit {
   submit() {
 
     for (const e of this.customerTypeList) {
-      // tslint:disable-next-line:triple-equals
-      if (e.id == this.customerCreateForm.value.customerType) {
+      if (e.id === this.customerCreateForm.value.customerType) {
         this.customerCreateForm.value.customerType = e;
         break;
       }
@@ -65,10 +64,15 @@ export class CustomerCreateComponent implements OnInit {
       this.customerComponent.ngOnInit();
     }, error => console.log(error));
 
-    document.getElementById('closeModalCreate').click();
-
+    document.getElementById('modalCreate').click();
+    console.log(this.customerCreateForm.value);
     this.ngOnInit();
+  }
 
-    // this.router.navigateByUrl('/customer').then(r => console.log(r));
+  addNewCustomer() {
+    // console.log(this.customerCreateForm.value);
+    this.customerService.addNewCustomer(this.customerCreateForm.value).subscribe(data => {
+      // this.router.navigateByUrl('app-customer');
+    });
   }
 }

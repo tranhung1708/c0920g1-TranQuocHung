@@ -10,7 +10,7 @@ import {CustomerService} from '../../service/customer.service';
 })
 export class CustomerComponent implements OnInit {
   customerList: ICustomer[];
-  customerUpdate: ICustomer;
+  customerUpdate: ICustomer = new ICustomer();
   page = 1;
 
   constructor(private customerService: CustomerService) {

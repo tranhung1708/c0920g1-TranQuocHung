@@ -1,6 +1,6 @@
 import {ICustomerType} from './customer-type';
 
-export interface ICustomer {
+export class ICustomer {
   id?: number;
   name: string;
   dateOfBirth: string;
@@ -10,4 +10,7 @@ export interface ICustomer {
   phoneNumber: string;
   email: string;
   customerType: ICustomerType;
+
+  constructor() {
+  }
 }
