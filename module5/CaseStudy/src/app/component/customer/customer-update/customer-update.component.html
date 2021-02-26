@@ -1,0 +1,51 @@
+<form [formGroup]="formUpdateCustomer" (ngSubmit)="onSubmit()">
+<p>
+Name Customer
+  <label>
+    <input type="text" formControlName="name" />
+  </label>
+</p>
+  <p>
+    Date Of Birth
+    <label>
+      <input type="text" formControlName="dateOfBirth" />
+    </label>
+  </p>
+  <p>
+    Address
+    <label>
+      <input type="text" formControlName="address" />
+    </label>
+  </p>
+  <p>
+    Phone Number
+    <label>
+      <input type="text" formControlName="phoneNumber" />
+    </label>
+  </p>
+  <p>
+    Id Card
+    <label>
+      <input type="text" formControlName="idCard" />
+    </label>
+  </p>
+  <p>
+    Email
+    <label>
+      <input type="text" formControlName="email" />
+    </label>
+  </p>
+  <p>
+    Gender
+    <label>
+      <input type="text" formControlName="gender" />
+    </label>
+  </p>
+  <p>
+    Customer Type
+    <label>
+      <input type="text" formControlName="customerType" />
+    </label>
+  </p>
+  <input type="submit"  value="update">
+</form>

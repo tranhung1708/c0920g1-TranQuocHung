@@ -8,20 +8,20 @@ import {HttpClientModule} from '@angular/common/http';
 import {CustomerCreateComponent} from './component/customer/customer-create/customer-create.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { CustomerDeleteComponent } from './component/customer/customer-delete/customer-delete.component';
+import { CustomerUpdateComponent } from './component/customer/customer-update/customer-update.component';
+import {AppRoutingModule} from './app-routing.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CustomerComponent,
-    CustomerCreateComponent,
-    CustomerDeleteComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

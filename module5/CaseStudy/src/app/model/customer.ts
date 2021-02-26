@@ -1,6 +1,6 @@
 import {ICustomerType} from './customer-type';
 
-export class ICustomer {
+export class ICustomer{
   id?: number;
   name: string;
   dateOfBirth: string;

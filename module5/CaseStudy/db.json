@@ -41,28 +41,28 @@
         "name": "Member"
       },
       "id": 5
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Member"
     },
     {
-      "name": "",
-      "dateOfBirth": "",
-      "gender": "",
-      "address": "",
-      "idCard": "",
-      "phoneNumber": "",
-      "email": "",
-      "customerType": 1,
-      "id": 6
+      "id": 2,
+      "name": "Sliver"
     },
     {
-      "name": "",
-      "dateOfBirth": "",
-      "gender": "",
-      "address": "",
-      "idCard": "",
-      "phoneNumber": "",
-      "email": "",
-      "customerType": 1,
-      "id": 7
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Diamond"
+    },
+    {
+      "id": 5,
+      "name": "Platinum"
     }
   ]
 }

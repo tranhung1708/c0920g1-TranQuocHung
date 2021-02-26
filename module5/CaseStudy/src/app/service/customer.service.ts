@@ -51,7 +51,15 @@ export class CustomerService {
     return this.http.get(this.url + '?name_like=' + name);
   }
 
-  addNewCustomer(customer): Observable<any>{
+  addNewCustomer(customer): Observable<any> {
     return this.http.post(this.url, customer);
+  }
+
+  getById(id: number): Observable<any> {
+    return this.http.get(this.url + '/' + id);
+  }
+
+  update(customer: ICustomer, id: number): Observable<any> {
+    return this.http.put(this.url + '/' + id, customer);
   }
 }

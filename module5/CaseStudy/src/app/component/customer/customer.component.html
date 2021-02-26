@@ -1,36 +1,34 @@
 <h2 class="text-center mt-2 ">Customer List</h2>
 
 <div class="container">
-  <table class="table">
+  <table class="table" style="margin-left: -42px;">
     <thead>
     <tr>
       <th>ID</th>
       <th>Name</th>
+      <th>Date Of Birth</th>
+      <th>Gender</th>
       <th>Address</th>
+      <th>Id Card</th>
       <th>Phone number</th>
       <th>Email</th>
       <th>Customer type</th>
-      <th>Update</th>
-      <th>Delete</th>
+      <th colspan="2">Action</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let customer of customerList">
       <td> {{customer.id}} </td>
       <td> {{customer.name}} </td>
+      <td> {{customer.dateOfBirth}} </td>
+      <td> {{customer.gender}} </td>
       <td> {{customer.address}} </td>
+      <td> {{customer.idCard}} </td>
       <td> {{customer.phoneNumber}} </td>
       <td> {{customer.email}} </td>
       <td> {{customer.customerType.name}} </td>
       <td>
-        <button
-            class="btn btn-outline-primary"
-            (click)="returnCustomer(customer)"
-            data-toggle="modal"
-            data-target="#modalUpdate"
-        >
-            Update
-        </button>
+      <td>  <button class="btn btn-primary" [routerLink]="'/customer/update/'+customer.id" style="margin-right: 10px"><i class="fa fa-edit"></i>Update</button>
       </td>
       <td>
         <button
@@ -66,3 +64,4 @@
 
 <!--<button class="btn btn-outline-danger" (click)="openDialog()">Delete</button>-->
 <app-customer-delete [customer]=customerUpdate></app-customer-delete>
+<app-customer-create></app-customer-create>
