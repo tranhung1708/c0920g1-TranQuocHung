@@ -1,51 +1,192 @@
-<form [formGroup]="formUpdateCustomer" (ngSubmit)="onSubmit()">
-<p>
-Name Customer
-  <label>
-    <input type="text" formControlName="name" />
-  </label>
-</p>
-  <p>
-    Date Of Birth
-    <label>
-      <input type="text" formControlName="dateOfBirth" />
-    </label>
-  </p>
-  <p>
-    Address
-    <label>
-      <input type="text" formControlName="address" />
-    </label>
-  </p>
-  <p>
-    Phone Number
-    <label>
-      <input type="text" formControlName="phoneNumber" />
-    </label>
-  </p>
-  <p>
-    Id Card
-    <label>
-      <input type="text" formControlName="idCard" />
-    </label>
-  </p>
-  <p>
-    Email
-    <label>
-      <input type="text" formControlName="email" />
-    </label>
-  </p>
-  <p>
-    Gender
-    <label>
-      <input type="text" formControlName="gender" />
-    </label>
-  </p>
-  <p>
-    Customer Type
-    <label>
-      <input type="text" formControlName="customerType" />
-    </label>
-  </p>
-  <input type="submit"  value="update">
-</form>
+<!--<form [formGroup]="formUpdateCustomer" (ngSubmit)="onSubmit()">-->
+<!--  <p>-->
+<!--    Họ Tên Khách Hàng-->
+<!--    <label>-->
+<!--      <input class="form-control" type="text" formControlName="name">-->
+<!--    </label>-->
+<!--  </p>-->
+<!--  <p *ngIf="formUpdateCustomer.get('name').hasError('required')-->
+<!--    " style="color: red">Tên Không Được Để Trống</p>-->
+<!--  <p>-->
+<!--  <p *ngIf="formUpdateCustomer.get('name').hasError('pattern')-->
+<!--    " style="color: red">Tên Sai Định Dạng</p>-->
+<!--  <p>-->
+<!--    Ngày Sinh :-->
+<!--    <label>-->
+<!--      <input class="form-control" type="date" formControlName="dateOfBirth"/>-->
+<!--    </label>-->
+<!--  <p *ngIf="formUpdateCustomer.get('dateOfBirth').hasError('dateOfBirth')-->
+<!--    " style="color: red">Phải đủ 18 Tuổi-->
+<!--  </p>-->
+<!--  <p>-->
+<!--    Địa Chỉ :-->
+<!--    <label>-->
+<!--      <input class="form-control" type="text" formControlName="address"/>-->
+<!--    </label>-->
+<!--  <p style="color:red;;" *ngIf="formUpdateCustomer.get('address').hasError('required') ">Địa Chỉ Không Được Để Trống</p>-->
+<!--  <p style="color: red" *ngIf="formUpdateCustomer.get('address').hasError('pattern')">Không Được Nhập Số</p>-->
+<!--  <p>-->
+<!--    Số Điện Thoại :-->
+<!--    <label>-->
+<!--      <input class="form-control" type="text" formControlName="phoneNumber"/>-->
+<!--    </label>-->
+<!--  </p>-->
+<!--  <p class="text-danger" *ngIf="formUpdateCustomer.get('phoneNumber').hasError('required') ">SĐT Không Được Để Trống</p>-->
+<!--  <p class="text-danger" *ngIf="formUpdateCustomer.get('phoneNumber').hasError('pattern')">Sai Định Dạng Mời Bạn Nhập Lại</p>-->
+<!--  <p>-->
+<!--    Chứng Minh Nhân Dân :-->
+<!--    <label>-->
+<!--      <input class="form-control" type="text" formControlName="idCard"/>-->
+<!--    </label>-->
+<!--  </p>-->
+<!--  <p class="text-danger" *ngIf="formUpdateCustomer.get('idCard').hasError('required') ">ID Card Không Được Để Trống</p>-->
+<!--  <p class="text-danger" *ngIf="formUpdateCustomer.get('idCard').hasError('pattern')">Sai Định Dạng Mời Bạn Nhập Lại</p>-->
+<!--  <p>-->
+<!--    Email :-->
+<!--    <label>-->
+<!--      <input class="form-control" type="text" formControlName="email"/>-->
+<!--    </label>-->
+<!--  </p>-->
+<!--  <p class="text-danger" *ngIf="formUpdateCustomer.get('email').hasError('required') ">Email Không Được Để Trống</p>-->
+<!--  <p class="text-danger" *ngIf="formUpdateCustomer.get('email').hasError('email')">Sai Định Dạng Mời Bạn Nhập Lại</p>-->
+<!--  <p>-->
+<!--    Giới Tính :-->
+<!--    <label>-->
+<!--      <select style="width: 350px" class="form-control mr-sm-2" formControlName="gender">-->
+<!--        <option value="Male">Male</option>-->
+<!--        <option value="Female">Female</option>-->
+<!--      </select>-->
+<!--    </label>-->
+<!--  </p>-->
+<!--  <p>-->
+<!--    Loại Khách Hàng :-->
+<!--    <label>-->
+<!--      <select style="width: 350px" class="form-control col-6" formControlName="customerType">-->
+<!--        <option [selected]="customerType.name == formUpdateCustomer.controls.customerType.value.name"-->
+<!--                *ngFor="let customerType of customerTypeList" [ngValue]="customerType"> {{customerType.name}} </option>-->
+<!--      </select>-->
+<!--    </label>-->
+<!--  </p>-->
+<!--  <input type="submit" [disabled]="formUpdateCustomer.invalid" routerLink="customer/home" value="update">-->
+<!--</form>-->
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div >
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Chỉnh Sửa Khách Hàng</h5>
+        <button type="button" class="btn-close" id="closeModalCreate" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <form [formGroup]="formUpdateCustomer" (ngSubmit)="onSubmit()" class="modal-add">
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input
+              [class]="formUpdateCustomer.controls.name.invalid && formUpdateCustomer.controls.name.touched ? 'border-danger' : ''"
+              type="text" class="form-control" formControlName="name">
+            <div *ngIf="formUpdateCustomer.get('name').touched">
+              <p class="text-danger" *ngIf="formUpdateCustomer.get('name').hasError('required') ">Tên Không Được Bỏ
+                Trống</p>
+              <p class="text-danger"
+                 *ngIf="formUpdateCustomer.get('name').hasError('pattern') || formUpdateCustomer.get('name').hasError('minlength') ">
+                Tên không đúng định dạng và độ dài Tên> 6</p>
+            </div>
+          </div>
+        </div>
+        <!--  End row 1      -->
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Date of Birth</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control mr-sm-2" formControlName="dateOfBirth">
+            <p *ngIf="formUpdateCustomer.get('dateOfBirth').hasError('dateOfBirth')
+                 && formUpdateCustomer.get('dateOfBirth').dirty" style="color: red">Chưa Đủ 18 Tuổi</p>
+          </div>
+        </div>
+        <!--        End row 2-->
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Gender</label>
+          <div class="col-sm-10">
+            <select class="form-control mr-sm-2" formControlName="gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+        <!--     End row 3   -->
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Address</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control mr-sm-2" formControlName="address">
+            <div *ngIf="formUpdateCustomer.get('address').touched">
+              <p class="text-danger" *ngIf="formUpdateCustomer.get('address').hasError('required') ">Địa Chỉ Không
+                Được Để Trống</p>
+              <p class="text-danger" *ngIf="formUpdateCustomer.get('address').hasError('pattern')">Không Được Nhập
+                Số</p>
+            </div>
+          </div>
+        </div>
+        <!--        End row 4-->
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">ID Card</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control mr-sm-2" formControlName="idCard">
+            <div *ngIf="formUpdateCustomer.get('idCard').touched">
+              <p class="text-danger" *ngIf="formUpdateCustomer.get('idCard').hasError('required') ">ID Card Không
+                Được Để Trống</p>
+              <p class="text-danger" *ngIf="formUpdateCustomer.get('idCard').hasError('pattern')">Sai Định Dạng Mời
+                Bạn Nhập Lại</p>
+            </div>
+          </div>
+        </div>
+        <!--        End row 5-->
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Phone number</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control mr-sm-2" formControlName="phoneNumber">
+            <div *ngIf="formUpdateCustomer.get('phoneNumber').touched">
+              <p class="text-danger" *ngIf="formUpdateCustomer.get('phoneNumber').hasError('required') ">SĐT Không
+                Được Để Trống</p>
+              <p class="text-danger" *ngIf="formUpdateCustomer.get('phoneNumber').hasError('pattern')">Sai Định Dạng
+                Mời Bạn Nhập Lại</p>
+            </div>
+          </div>
+        </div>
+        <!--        End row 6-->
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control mr-sm-2" formControlName="email">
+            <div *ngIf="formUpdateCustomer.get('email').touched">
+              <p class="text-danger" *ngIf="formUpdateCustomer.get('email').hasError('required') ">Email Không Được
+                Để Trống</p>
+              <p class="text-danger" *ngIf="formUpdateCustomer.get('email').hasError('email')">Sai Định Dạng Mời Bạn
+                Nhập Lại</p>
+            </div>
+          </div>
+        </div>
+        <!--        End row 7-->
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Customer Type</label>
+          <div class="col-sm-10">
+            <select style="width: 350px" class="form-control col-6" formControlName="customerType">-->
+                      <option *ngFor="let type of customerTypeList" [ngValue]="type.id" > {{type.name}}
+                      </option>
+            </select>
+          </div>
+        </div>
+        <!--        -->
+        <div class="form-group row mr-0 ml-0">
+          <button type="button" [routerLink]='' class="btn btn-secondary" (click)="close()">Close</button>
+          <button type="submit" [disabled]="formUpdateCustomer.invalid" class="btn btn-primary">
+            Save
+            Customer
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

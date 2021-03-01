@@ -7,3 +7,21 @@ body {
   font-family: 'Poppins', sans-serif;
   background: #fafafa;
 }
+
+.navbar {
+  .navbar-brand {
+    font-size: 25px;
+  }
+}
+
+.footer {
+  height: 60px;
+  width: 100%;
+  background-color: #f8f9fa;
+  line-height: 60px;
+
+  .footer-content {
+    text-align: center;
+    font-size: 14px;
+  }
+}

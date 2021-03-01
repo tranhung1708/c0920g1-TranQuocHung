@@ -23,24 +23,14 @@ export class CustomerService {
     return this.http.get(this.url);
   }
 
-  getAllCustomerHavePagination(page: number, limit: number) {
-    return this.http.get(this.url + '?_limit=' + limit + '&_page=' + page);
+  getAllCustomerHavePagination() {
+    return this.http.get(this.url);
   }
 
   createCustomer(customer: ICustomer) {
-    // @ts-ignore
-    // return this.http.post(this.url, customer, this.header );
     return this.http.post<ICustomer>(this.url, JSON.stringify(customer), this.httpOptions);
   }
 
-  getCustomerById(id: number) {
-    return this.http.get(this.url + '/' + id);
-  }
-
-  updateCustomer(customer: ICustomer) {
-    // @ts-ignore
-    return this.http.put(this.url + '/' + customer.id, customer, this.header);
-  }
 
   deleteCustomerById(id: number) {
     return this.http.delete(this.url + '/' + id);
@@ -51,9 +41,6 @@ export class CustomerService {
     return this.http.get(this.url + '?name_like=' + name);
   }
 
-  addNewCustomer(customer): Observable<any> {
-    return this.http.post(this.url, customer);
-  }
 
   getById(id: number): Observable<any> {
     return this.http.get(this.url + '/' + id);
@@ -61,5 +48,9 @@ export class CustomerService {
 
   update(customer: ICustomer, id: number): Observable<any> {
     return this.http.put(this.url + '/' + id, customer);
+  }
+
+  updateCustomer(customer: ICustomer) {
+    return this.http.put(this.url + '/' + customer.id, customer, this.httpOptions);
   }
 }

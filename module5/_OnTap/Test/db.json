@@ -1,0 +1,36 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "hưng",
+      "dayOfBirth": "10/10/1111",
+      "address": "a",
+      "customerType": {
+        "id": 1,
+        "name": "vip"
+      }
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Member"
+    },
+    {
+      "id": 2,
+      "name": "Sliver"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Diamond"
+    },
+    {
+      "id": 5,
+      "name": "Platinum"
+    }
+  ]
+}

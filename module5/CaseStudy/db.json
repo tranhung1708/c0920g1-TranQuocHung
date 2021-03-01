@@ -1,68 +1,82 @@
 {
   "customer": [
     {
-      "id": 2,
-      "name": "124124214",
-      "dateOfBirth": "2000-01-01",
+      "name": "aaaaaaaaaaa",
+      "dateOfBirth": "1111-11-11",
       "gender": "Female",
-      "address": "Quang BInh",
-      "idCard": "044200002962",
-      "phoneNumber": "123213",
-      "email": "weeee@gmail.com",
+      "address": "aaa",
+      "idCard": "1212121212",
+      "phoneNumber": "84111111111111111",
+      "email": "a@a",
       "customerType": {
-        "id": 4,
-        "name": "Diamond"
-      }
+        "id": 5,
+        "name": "Platinum"
+      },
+      "id": 22
     },
     {
-      "name": "8698739812",
-      "dateOfBirth": "20000-03-05",
-      "gender": "male",
-      "address": "Quang Nam",
-      "idCard": "4232323",
-      "phoneNumber": "0944524136",
-      "email": "qwewqewe@gmail.com",
+      "name": "aaaaaa",
+      "dateOfBirth": "1111-11-01",
+      "gender": "Male",
+      "address": "a",
+      "idCard": "1212121211",
+      "phoneNumber": "8411111111111",
+      "email": "a@a",
+      "customerType": {
+        "id": 5,
+        "name": "Platinum"
+      },
+      "id": 23
+    },
+    {
+      "name": "aaaaaaaa",
+      "dateOfBirth": "0111-11-11",
+      "gender": "Female",
+      "address": "a",
+      "idCard": "121212121",
+      "phoneNumber": "84111111111111",
+      "email": "a2@a",
       "customerType": {
         "id": 2,
         "name": "Sliver"
       },
-      "id": 4
+      "id": 24
     },
     {
-      "name": "hgdjhsadgjhsad",
-      "dateOfBirth": "1992-06-05",
-      "gender": "nam",
-      "address": "Quang Tri",
-      "idCard": "045236251478",
-      "phoneNumber": "234343",
-      "email": "qqqqqqq@gmail.com",
+      "name": "bbbbbb",
+      "dateOfBirth": "0111-11-11",
+      "gender": "Female",
+      "address": "a",
+      "idCard": "121212121",
+      "phoneNumber": "8411111111111",
+      "email": "a@a",
       "customerType": {
-        "id": 1,
-        "name": "Member"
+        "id": 5,
+        "name": "Platinum"
       },
-      "id": 5
+      "id": 25
     }
   ],
   "customerType": [
     {
       "id": 1,
-      "name": "Member"
+      "name": "Thành viên"
     },
     {
       "id": 2,
-      "name": "Sliver"
+      "name": "Bạc"
     },
     {
       "id": 3,
-      "name": "Gold"
+      "name": "Vàng"
     },
     {
       "id": 4,
-      "name": "Diamond"
+      "name": "Kim cương"
     },
     {
       "id": 5,
-      "name": "Platinum"
+      "name": "Bạch kim"
     }
   ]
 }

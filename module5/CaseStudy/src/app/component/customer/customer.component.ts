@@ -1,6 +1,10 @@
 import {Component, Injectable, Input, OnInit} from '@angular/core';
 import {ICustomer} from '../../model/customer';
 import {CustomerService} from '../../service/customer.service';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {CustomerUpdateComponent} from './customer-update/customer-update.component';
+import {CustomerDeleteComponent} from './customer-delete/customer-delete.component';
+import {CustomerCreateComponent} from './customer-create/customer-create.component';
 
 @Injectable({providedIn: 'root'})
 @Component({
@@ -10,10 +14,10 @@ import {CustomerService} from '../../service/customer.service';
 })
 export class CustomerComponent implements OnInit {
   customerList: ICustomer[];
-  customerUpdate: ICustomer = new ICustomer();
-  page = 1;
+  name: string;
+  p: any;
 
-  constructor(private customerService: CustomerService) {
+  constructor(private customerService: CustomerService, private modal: NgbModal) {
   }
 
   ngOnInit(): void {
@@ -27,8 +31,9 @@ export class CustomerComponent implements OnInit {
   }
 
   getAllCustomerHavePagination() {
-    this.customerService.getAllCustomerHavePagination(this.page, 5).subscribe((data: ICustomer[]) => {
+    this.customerService.getAllCustomerHavePagination().subscribe((data: ICustomer[]) => {
       this.customerList = data;
+      console.log(data);
     }, error => console.log(error));
   }
 
@@ -39,6 +44,34 @@ export class CustomerComponent implements OnInit {
   }
 
   returnCustomer(customer: ICustomer) {
-    this.customerUpdate = customer;
+    const ref1 = this.modal.open(CustomerDeleteComponent);
+    ref1.componentInstance.customer = customer;
+    ref1.componentInstance.modalRef = ref1;
+    ref1.result.finally(() => {
+      this.getAllCustomerHavePagination();
+    });
   }
+
+  updateCustomer(customer: ICustomer) {
+    const ref = this.modal.open(CustomerUpdateComponent);
+    ref.componentInstance.customer1 = customer;
+  }
+
+  createCustomer(customer: ICustomer) {
+    const ref = this.modal.open(CustomerCreateComponent);
+    ref.componentInstance.customer1 = customer;
+    ref.result.finally(() => {
+      this.getAllCustomerHavePagination();
+    });
+  }
+
+  key: string = 'id';
+  reverse: boolean = false;
+  customer: ICustomer;
+
+  sort(key) {
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
+
 }

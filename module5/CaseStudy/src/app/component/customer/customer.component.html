@@ -1,23 +1,31 @@
 <h2 class="text-center mt-2 ">Customer List</h2>
-
+<button type="button" (click)="createCustomer(customer)" class="btn btn-primary" data-toggle="modal" data-target="#modalCreate">
+  Thêm Mới Khách Hàng
+</button>
+<label>
+  <input style="width: 400px;
+      margin-left: 700px ;margin-bottom: 10px" class="form-control mr-sm-2" type="text"
+         placeholder="Tìm Kiếm Theo Tên Khách Hàng" [(ngModel)]="name" (input)="search(name)">
+</label>
 <div class="container">
   <table class="table" style="margin-left: -42px;">
     <thead>
     <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Date Of Birth</th>
-      <th>Gender</th>
-      <th>Address</th>
-      <th>Id Card</th>
-      <th>Phone number</th>
+      <th (click)="sort('id')">ID &nbsp;<i class='fa fa-sort'></i></th>
+      <th>Tên Khách Hàng</th>
+      <th>Ngày Sinh</th>
+      <th>Giới Tính</th>
+      <th>Địa Chỉ</th>
+      <th>CMND</th>
+      <th>Số ĐT</th>
       <th>Email</th>
-      <th>Customer type</th>
-      <th colspan="2">Action</th>
+      <th>Loại Khách Hàng</th>
+      <th colspan="2">Chức Năng</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let customer of customerList">
+    <tr
+      *ngFor="let customer of customerList |filter:name |orderBy:key:reverse| paginate: { itemsPerPage: 2, currentPage: p }">
       <td> {{customer.id}} </td>
       <td> {{customer.name}} </td>
       <td> {{customer.dateOfBirth}} </td>
@@ -28,7 +36,17 @@
       <td> {{customer.email}} </td>
       <td> {{customer.customerType.name}} </td>
       <td>
-      <td>  <button class="btn btn-primary" [routerLink]="'/customer/update/'+customer.id" style="margin-right: 10px"><i class="fa fa-edit"></i>Update</button>
+      <td>
+        <!--        <button class="btn btn-primary" [routerLink]="'/customer/update/'+customer.id" style="margin-right: 10px">Update-->
+        <!--        </button>-->
+        <button
+          type="button"
+          (click)="updateCustomer(customer)"
+          data-toggle="modal"
+          class="btn btn-outline-danger"
+          data-target="#modalUpdate">
+          Update
+        </button>
       </td>
       <td>
         <button
@@ -36,32 +54,13 @@
           (click)="returnCustomer(customer)"
           data-toggle="modal"
           class="btn btn-outline-danger"
-          data-target="#modalDelete"
-        >
+          data-target="#modalDelete">
           Delete
         </button>
       </td>
     </tr>
     </tbody>
   </table>
-
-  <nav aria-label="Page navigation example">
-    <ul class="pagination">
-      <li *ngIf="page > 1" class="page-item">
-        <a class="page-link" aria-label="Previous" (click)="page = page -1; getAllCustomerHavePagination()">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      <li class="page-item disabled"><a class="page-link"> {{page}} </a></li>
-      <li class="page-item">
-        <a class="page-link" aria-label="Next" (click)="page = page + 1; getAllCustomerHavePagination()">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
 
-<!--<button class="btn btn-outline-danger" (click)="openDialog()">Delete</button>-->
-<app-customer-delete [customer]=customerUpdate></app-customer-delete>
-<app-customer-create></app-customer-create>

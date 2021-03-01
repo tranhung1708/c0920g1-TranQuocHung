@@ -1,0 +1,21 @@
+<app-customer-create></app-customer-create>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Ngày Sinh</th>
+    <th>Địa chỉ</th>
+    <th>Loại Khách Hàng</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customerList">
+    <td>{{customer.id}}</td>
+    <td>{{customer.name}}</td>
+    <td>{{customer.dayOfBirth}}</td>
+    <td>{{customer.address}}</td>
+    <td>{{customer.customerType.name}}</td>
+  </tr>
+  </tbody>
+</table>

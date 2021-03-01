@@ -1,5 +1,5 @@
 
-<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+<div>
   <div class="modal-dialog" role="document">
     <div class="modal-content" *ngIf="customer">
       <div class="modal-header">
@@ -12,7 +12,7 @@
         <h4 class="text-center text-danger" >You are delete {{customer.name}} ?  </h4>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" (click)="close()">Close</button>
         <button (click)="deleteCustomer()" type="button" class="btn btn-outline-danger">Delete</button>
       </div>
     </div>

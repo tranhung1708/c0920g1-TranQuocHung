@@ -6,8 +6,10 @@ import {RouterModule, Routes} from '@angular/router';
 import {CustomerComponent} from './component/customer/customer.component';
 import {CustomerDeleteComponent} from './component/customer/customer-delete/customer-delete.component';
 import {ReactiveFormsModule} from '@angular/forms';
-
-
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {FormsModule} from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
+import {Ng2OrderModule} from 'ng2-order-pipe';
 const routes: Routes = [
   {path: '', redirectTo: '', pathMatch: 'full'},
   {path: 'customer/home', component: CustomerComponent},
@@ -23,7 +25,11 @@ const routes: Routes = [
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    Ng2SearchPipeModule,
+    FormsModule,
+    NgxPaginationModule,
+    Ng2OrderModule,
   ],
   exports: [RouterModule]
 })

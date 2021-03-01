@@ -1,11 +1,9 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCreate">
-  Thêm Mới Khách Hàng
-</button>
+
 
 <!-- Modal -->
-<div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div>
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Thêm Mới Khách Hàng</h5>
@@ -13,85 +11,109 @@
           <span aria-hidden="true"></span>
         </button>
       </div>
-      <form [formGroup]="customerCreateForm" (ngSubmit)="submit()">
-        <div class="modal-body">
-          <div class="form-group">
-            <div class="row">
-              <label class="width">Name<span class="text-danger">: </span> </label>
-              <div *ngIf="customerCreateForm.get('name').touched">
-                <p class="text-danger" *ngIf="customerCreateForm.get('name').hasError('required') ">Name is not empty</p>
-                <p class="text-danger" *ngIf="customerCreateForm.get('name').hasError('pattern') || customerCreateForm.get('name').hasError('minlength') ">Name is not correct format and Name length > 6</p>
-              </div>
-              <label>
-                <input [class]="customerCreateForm.controls.name.invalid && customerCreateForm.controls.name.touched ? 'border-danger' : ''" type="text" class="form-control col-6" formControlName="name">
-              </label>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="row">
-              <label  class="col-form-label ">Date of Birth<span class="text-danger">*</span></label>
-              <label>
-                <input  style="width: 350px" type="date" class="form-control col-6" formControlName="dateOfBirth">
-              </label>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="row">
-              <label  class="col-form-label">Gender<span class="text-danger">: </span></label>
-              <label>
-                <select style="width: 350px" class="form-control col-6" formControlName="gender">
-                  <option value="true">Male</option>
-                  <option value="false">Female</option>
-                </select>
-              </label>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="row">
-              <label  class="col-form-label ">Address<span class="text-danger">*</span></label>
-              <label>
-                <input style="width: 350px" type="text" class="form-control col-6" formControlName="address">
-              </label>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="row">
-              <label class="col-form-label ">ID Card<span class="text-danger">*</span></label>
-              <label>
-                <input style="width: 350px" type="text" class="form-control col-6" formControlName="idCard">
-              </label>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="row">
-              <label  class="col-form-label ">Phone number<span class="text-danger">*</span></label>
-              <label>
-                <input style="width: 350px" type="text" class="form-control col-6" formControlName="phoneNumber">
-              </label>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="row">
-              <label  class="col-form-label ">Email<span class="text-danger">*</span></label>
-              <label>
-                <input style="width: 350px" type="text" class="form-control col-6" formControlName="email">
-              </label>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="row" >
-              <label class="col-form-label">Customer Type<span class="text-danger">*</span></label>
-              <label>
-                <select style="width: 350px"  class="form-control col-6" formControlName="customerType">
-                  <option *ngFor="let customerType of customerTypeList" [value]="customerType.id"> {{customerType.name}} </option>
-                </select>
-              </label>
+      <form [formGroup]="customerCreateForm" (ngSubmit)="submit()" class="modal-add">
+        <div class="form-group row">
+          <label  class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input
+              [class]="customerCreateForm.controls.name.invalid && customerCreateForm.controls.name.touched ? 'border-danger' : ''"
+              type="text" class="form-control" formControlName="name">
+            <div *ngIf="customerCreateForm.get('name').touched">
+              <p class="text-danger" *ngIf="customerCreateForm.get('name').hasError('required') ">Tên Không Được Bỏ
+                Trống</p>
+              <p class="text-danger"
+                 *ngIf="customerCreateForm.get('name').hasError('pattern') || customerCreateForm.get('name').hasError('minlength') ">
+                Tên không đúng định dạng và độ dài Tên> 6</p>
             </div>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" (click)="submit()" class="btn btn-primary">Save Customer</button>
+        <!--  End row 1      -->
+        <div class="form-group row">
+          <label  class="col-sm-2 col-form-label">Date of Birth</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control mr-sm-2" formControlName="dateOfBirth">
+            <p *ngIf="customerCreateForm.get('dateOfBirth').hasError('dateOfBirth')
+                 && customerCreateForm.get('dateOfBirth').dirty" style="color: red">Chưa Đủ 18 Tuổi</p>
+          </div>
+        </div>
+<!--        End row 2-->
+        <div class="form-group row">
+          <label  class="col-sm-2 col-form-label">Gender</label>
+          <div class="col-sm-10">
+              <select class="form-control mr-sm-2" formControlName="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+          </div>
+        </div>
+<!--     End row 3   -->
+        <div class="form-group row">
+          <label  class="col-sm-2 col-form-label">Address</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control mr-sm-2" formControlName="address">
+            <div *ngIf="customerCreateForm.get('address').touched">
+            <p class="text-danger" *ngIf="customerCreateForm.get('address').hasError('required') ">Địa Chỉ Không
+              Được Để Trống</p>
+            <p class="text-danger" *ngIf="customerCreateForm.get('address').hasError('pattern')">Không Được Nhập
+              Số</p>
+            </div>
+          </div>
+        </div>
+<!--        End row 4-->
+        <div class="form-group row">
+          <label  class="col-sm-2 col-form-label">ID Card</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control mr-sm-2" formControlName="idCard">
+            <div *ngIf="customerCreateForm.get('idCard').touched">
+              <p class="text-danger" *ngIf="customerCreateForm.get('idCard').hasError('required') ">ID Card Không
+                Được Để Trống</p>
+              <p class="text-danger" *ngIf="customerCreateForm.get('idCard').hasError('pattern')">Sai Định Dạng Mời
+                Bạn Nhập Lại</p>
+            </div>
+          </div>
+        </div>
+<!--        End row 5-->
+        <div class="form-group row">
+          <label  class="col-sm-2 col-form-label">Phone number</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control mr-sm-2" formControlName="phoneNumber">
+            <div *ngIf="customerCreateForm.get('phoneNumber').touched">
+              <p class="text-danger" *ngIf="customerCreateForm.get('phoneNumber').hasError('required') ">SĐT Không
+                Được Để Trống</p>
+              <p class="text-danger" *ngIf="customerCreateForm.get('phoneNumber').hasError('pattern')">Sai Định Dạng
+                Mời Bạn Nhập Lại</p>
+            </div>
+          </div>
+        </div>
+<!--        End row 6-->
+        <div class="form-group row">
+          <label  class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control mr-sm-2" formControlName="email">
+            <div *ngIf="customerCreateForm.get('email').touched">
+              <p class="text-danger" *ngIf="customerCreateForm.get('email').hasError('required') ">Email Không Được
+                Để Trống</p>
+              <p class="text-danger" *ngIf="customerCreateForm.get('email').hasError('email')">Sai Định Dạng Mời Bạn
+                Nhập Lại</p>
+            </div>
+          </div>
+        </div>
+<!--        End row 7-->
+        <div class="form-group row">
+          <label  class="col-sm-2 col-form-label">Customer Type</label>
+          <div class="col-sm-10">
+            <select class="form-control mr-sm-2" formControlName="customerType">
+              <option *ngFor="let customerType of customerTypeList"
+                      [ngValue]="customerType"> {{customerType.name}} </option>
+            </select>
+          </div>
+        </div>
+<!--        -->
+        <div class="form-group row mr-0 ml-0">
+          <button type="button" class="btn btn-secondary mr-1" data-dismiss="modal">Close</button>
+          <button type="button" (click)="submit()" [disabled]="customerCreateForm.invalid" class="btn btn-primary" data-dismiss="modal">Save
+            Customer
+          </button>
         </div>
       </form>
     </div>
