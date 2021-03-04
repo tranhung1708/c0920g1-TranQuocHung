@@ -1,32 +1,44 @@
-<h2 class="text-center mt-2 ">Customer List</h2>
-<button type="button" (click)="createCustomer(customer)" class="btn btn-primary" data-toggle="modal" data-target="#modalCreate">
-  Thêm Mới Khách Hàng
-</button>
-<label>
-  <input style="width: 400px;
+<h2 class="text-center mt-2 ">Danh Sách Khách Hàng Gửi Tiền</h2>
+<!--<button type="button" (click)="createCustomer(customer)" class="btn btn-primary" data-toggle="modal" data-target="#modalCreate">-->
+<!--  Thêm Mới Khách Hàng-->
+<!--</button>-->
+<form>
+  <label>
+    <input style="width: 400px;
       margin-left: 700px ;margin-bottom: 10px" class="form-control mr-sm-2" type="text"
-         placeholder="Tìm Kiếm Theo Tên Khách Hàng" [(ngModel)]="name" (input)="search(name)">
-</label>
+           placeholder="Tìm Kiếm Theo Tên Khách Hàng" [(ngModel)]="name" name="search1">
+  </label>
+  <button class="btn btn-outline-dark" type="submit" (click)="search()">Search</button>
+</form>
+<form>
+  <label>
+    <input style="width: 400px;
+      margin-left: 700px ;margin-bottom: 10px" class="form-control mr-sm-2" type="text"
+           placeholder="Tìm Kiếm" [(ngModel)]="searchFullName" name="search2">
+  </label>
+  <button class="btn btn-outline-dark" type="submit" (click)="searchFull()">Search</button>
+</form>
 <div class="container">
   <table class="table" style="margin-left: -42px;">
     <thead>
     <tr>
-      <th (click)="sort('id')">ID &nbsp;<i class='fa fa-sort'></i></th>
+      <th>Mã Khách Hàng</th>
+      <th>Mã Số Sổ</th>
       <th>Tên Khách Hàng</th>
-      <th>Ngày Sinh</th>
-      <th>Giới Tính</th>
-      <th>Địa Chỉ</th>
-      <th>CMND</th>
-      <th>Số ĐT</th>
-      <th>Email</th>
-      <th>Loại Khách Hàng</th>
+      <th>Ngày Mở Sổ</th>
+      <th>Thời Gian Bắt Đầu Gửi</th>
+      <th>Kì Hạn</th>
+      <th>Số Tiền Gửi</th>
+      <th>Lãi Suất</th>
+      <th>Ưu Đãi</th>
       <th colspan="2">Chức Năng</th>
     </tr>
     </thead>
     <tbody>
     <tr
-      *ngFor="let customer of customerList |filter:name |orderBy:key:reverse| paginate: { itemsPerPage: 2, currentPage: p }">
+      *ngFor="let customer of customerList  |orderBy:key:reverse| paginate: { itemsPerPage: 2, currentPage: p }">
       <td> {{customer.id}} </td>
+      <td> {{customer.customerType.name}} </td>
       <td> {{customer.name}} </td>
       <td> {{customer.dateOfBirth}} </td>
       <td> {{customer.gender}} </td>
@@ -34,7 +46,6 @@
       <td> {{customer.idCard}} </td>
       <td> {{customer.phoneNumber}} </td>
       <td> {{customer.email}} </td>
-      <td> {{customer.customerType.name}} </td>
       <td>
       <td>
         <!--        <button class="btn btn-primary" [routerLink]="'/customer/update/'+customer.id" style="margin-right: 10px">Update-->

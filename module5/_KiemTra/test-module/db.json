@@ -1,0 +1,111 @@
+{
+  "test-module": [
+    {
+      "id": 1,
+      "name": "tran quoc hung",
+      "ngayMoSo": "10/10/2002",
+      "thoiGianGui": "10/a/a",
+      "kiHan":"aaaaa",
+      "soTienGui": "11111",
+      "laiSuat": "1111",
+      "uuDai": "ao mua",
+      "testType": {
+        "id": 1,
+        "name": "vip"
+      }
+    },
+    {
+      "name": "aaaa",
+      "ngaySinh": "2021-03-10",
+      "testType": "1",
+      "id": 2
+    },
+    {
+      "name": "abc",
+      "ngaySinh": "2021-03-18",
+      "testType": "",
+      "id": 3
+    },
+    {
+      "name": "",
+      "ngaySinh": "",
+      "testType": "",
+      "id": 4
+    },
+    {
+      "name": "ssssss",
+      "ngaySinh": "2021-03-11",
+      "testType": "",
+      "id": 5
+    },
+    {
+      "name": "ttytyty",
+      "ngaySinh": "2021-03-02",
+      "testType": {
+        "id": 1,
+        "name": "vip"
+      },
+      "id": 6
+    },
+    {
+      "name": "ffhfh",
+      "ngaySinh": "2021-03-03",
+      "testType": {
+        "id": 1,
+        "name": "vip"
+      },
+      "id": 7
+    },
+    {
+      "name": "",
+      "ngaySinh": "",
+      "testType": "",
+      "id": 8
+    },
+    {
+      "name": "",
+      "ngaySinh": "",
+      "testType": "",
+      "id": 9
+    },
+    {
+      "name": "kjkkkk",
+      "ngaySinh": "",
+      "testType": "",
+      "id": 10
+    },
+    {
+      "name": "545",
+      "ngaySinh": "2021-03-01",
+      "testType": "",
+      "id": 11
+    },
+    {
+      "name": "",
+      "ngaySinh": "",
+      "testType": "",
+      "id": 12
+    },
+    {
+      "name": "hhh",
+      "ngaySinh": "",
+      "testType": "",
+      "id": 13
+    },
+    {
+      "name": "sssssss",
+      "ngaySinh": "2021-03-17",
+      "testType": {
+        "id": 1,
+        "name": "vip"
+      },
+      "id": 14
+    }
+  ],
+  "test-module-type": [
+    {
+      "id": 1,
+      "maSoSo": "123"
+    }
+  ]
+}

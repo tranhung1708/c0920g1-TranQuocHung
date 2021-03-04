@@ -1,82 +1,54 @@
 {
   "customer": [
     {
-      "name": "aaaaaaaaaaa",
+      "name": "Lê Đình Phúc",
       "dateOfBirth": "1111-11-11",
-      "gender": "Female",
-      "address": "aaa",
+      "gender": "2021-03-19",
+      "address": "5 Năm",
       "idCard": "1212121212",
       "phoneNumber": "84111111111111111",
-      "email": "a@a",
+      "email": "áo mưa",
       "customerType": {
-        "id": 5,
-        "name": "Platinum"
+        "id": 2,
+        "name": "456"
       },
       "id": 22
     },
     {
-      "name": "aaaaaa",
-      "dateOfBirth": "1111-11-01",
-      "gender": "Male",
-      "address": "a",
-      "idCard": "1212121211",
-      "phoneNumber": "8411111111111",
-      "email": "a@a",
+      "name": "Trần Quốc Hưng",
+      "dateOfBirth": "1111-11-17",
+      "gender": "2021-03-25",
+      "address": "5 Tháng",
+      "idCard": "100000000",
+      "phoneNumber": "10%",
+      "email": "l",
       "customerType": {
         "id": 5,
-        "name": "Platinum"
+        "name": "12444"
       },
       "id": 23
-    },
-    {
-      "name": "aaaaaaaa",
-      "dateOfBirth": "0111-11-11",
-      "gender": "Female",
-      "address": "a",
-      "idCard": "121212121",
-      "phoneNumber": "84111111111111",
-      "email": "a2@a",
-      "customerType": {
-        "id": 2,
-        "name": "Sliver"
-      },
-      "id": 24
-    },
-    {
-      "name": "bbbbbb",
-      "dateOfBirth": "0111-11-11",
-      "gender": "Female",
-      "address": "a",
-      "idCard": "121212121",
-      "phoneNumber": "8411111111111",
-      "email": "a@a",
-      "customerType": {
-        "id": 5,
-        "name": "Platinum"
-      },
-      "id": 25
     }
   ],
   "customerType": [
     {
       "id": 1,
-      "name": "Thành viên"
+      "name": "123"
     },
     {
       "id": 2,
-      "name": "Bạc"
+      "name": "456"
     },
     {
       "id": 3,
-      "name": "Vàng"
+      "name": "789"
     },
     {
       "id": 4,
-      "name": "Kim cương"
+      "name": "1122"
     },
     {
       "id": 5,
-      "name": "Bạch kim"
+      "name": "12444"
     }
   ]
 }

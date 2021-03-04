@@ -1,0 +1,182 @@
+<!--<div>-->
+<!--  <div class="modal-dialog modal-lg" role="document">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <h5 class="modal-title">Thêm Mới Khách Hàng</h5>-->
+<!--        <button type="button" class="btn-close" id="closeModalCreate" data-bs-dismiss="modal" aria-label="Close">-->
+<!--          <span aria-hidden="true"></span>-->
+<!--        </button>-->
+<!--      </div>-->
+<!--      <form [formGroup]="testModuleForm" (ngSubmit)="submit()" class="modal-add">-->
+<!--        <div>-->
+<!--          <label>Name:-->
+<!--            <input type="text" formControlName="name">-->
+<!--          </label>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <label>Ngay Sinh-->
+<!--            <input type="date" formControlName="ngaySinh">-->
+<!--          </label>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <label>Loại-->
+<!--            <select class="form-control mr-sm-2" formControlName="testType">-->
+<!--              <option *ngFor="let testType of testTypeList"-->
+<!--                      [ngValue]="testType"> {{testType.name}} </option>-->
+<!--            </select>-->
+<!--          </label>-->
+<!--        </div>-->
+<!--        <div class="form-group row mr-0 ml-0">-->
+<!--          <button type="button" class="btn btn-secondary mr-1" data-dismiss="modal" (click)="close()">Close</button>-->
+<!--          <button type="button" (click)="submit()" [disabled]="testModuleForm.invalid" class="btn btn-primary" data-dismiss="modal">Save-->
+<!--          </button>-->
+<!--        </div>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<form [formGroup]="formUpdateCustomer" (ngSubmit)="onSubmit()">-->
+<!--  <p>-->
+<!--    Họ Tên Khách Hàng-->
+<!--    <label>-->
+<!--      <input class="form-control" type="text" formControlName="name">-->
+<!--    </label>-->
+<!--  </p>-->
+<!--  <p *ngIf="formUpdateCustomer.get('name').hasError('required')-->
+<!--    " style="color: red">Tên Không Được Để Trống</p>-->
+<!--  <p>-->
+<!--  <p *ngIf="formUpdateCustomer.get('name').hasError('pattern')-->
+<!--    " style="color: red">Tên Sai Định Dạng</p>-->
+<!--  <p>-->
+<!--    Ngày Sinh :-->
+<!--    <label>-->
+<!--      <input class="form-control" type="date" formControlName="dateOfBirth"/>-->
+<!--    </label>-->
+<!--  <p *ngIf="formUpdateCustomer.get('dateOfBirth').hasError('dateOfBirth')-->
+<!--    " style="color: red">Phải đủ 18 Tuổi-->
+<!--  </p>-->
+<!--  <p>-->
+<!--    Địa Chỉ :-->
+<!--    <label>-->
+<!--      <input class="form-control" type="text" formControlName="address"/>-->
+<!--    </label>-->
+<!--  <p style="color:red;;" *ngIf="formUpdateCustomer.get('address').hasError('required') ">Địa Chỉ Không Được Để Trống</p>-->
+<!--  <p style="color: red" *ngIf="formUpdateCustomer.get('address').hasError('pattern')">Không Được Nhập Số</p>-->
+<!--  <p>-->
+<!--    Số Điện Thoại :-->
+<!--    <label>-->
+<!--      <input class="form-control" type="text" formControlName="phoneNumber"/>-->
+<!--    </label>-->
+<!--  </p>-->
+<!--  <p class="text-danger" *ngIf="formUpdateCustomer.get('phoneNumber').hasError('required') ">SĐT Không Được Để Trống</p>-->
+<!--  <p class="text-danger" *ngIf="formUpdateCustomer.get('phoneNumber').hasError('pattern')">Sai Định Dạng Mời Bạn Nhập Lại</p>-->
+<!--  <p>-->
+<!--    Chứng Minh Nhân Dân :-->
+<!--    <label>-->
+<!--      <input class="form-control" type="text" formControlName="idCard"/>-->
+<!--    </label>-->
+<!--  </p>-->
+<!--  <p class="text-danger" *ngIf="formUpdateCustomer.get('idCard').hasError('required') ">ID Card Không Được Để Trống</p>-->
+<!--  <p class="text-danger" *ngIf="formUpdateCustomer.get('idCard').hasError('pattern')">Sai Định Dạng Mời Bạn Nhập Lại</p>-->
+<!--  <p>-->
+<!--    Email :-->
+<!--    <label>-->
+<!--      <input class="form-control" type="text" formControlName="email"/>-->
+<!--    </label>-->
+<!--  </p>-->
+<!--  <p class="text-danger" *ngIf="formUpdateCustomer.get('email').hasError('required') ">Email Không Được Để Trống</p>-->
+<!--  <p class="text-danger" *ngIf="formUpdateCustomer.get('email').hasError('email')">Sai Định Dạng Mời Bạn Nhập Lại</p>-->
+<!--  <p>-->
+<!--    Giới Tính :-->
+<!--    <label>-->
+<!--      <select style="width: 350px" class="form-control mr-sm-2" formControlName="gender">-->
+<!--        <option value="Male">Male</option>-->
+<!--        <option value="Female">Female</option>-->
+<!--      </select>-->
+<!--    </label>-->
+<!--  </p>-->
+<!--  <p>-->
+<!--    Loại Khách Hàng :-->
+<!--    <label>-->
+<!--      <select style="width: 350px" class="form-control col-6" formControlName="customerType">-->
+<!--        <option [selected]="customerType.name == formUpdateCustomer.controls.customerType.value.name"-->
+<!--                *ngFor="let customerType of customerTypeList" [ngValue]="customerType"> {{customerType.name}} </option>-->
+<!--      </select>-->
+<!--    </label>-->
+<!--  </p>-->
+<!--  <input type="submit" [disabled]="formUpdateCustomer.invalid" routerLink="customer/home" value="update">-->
+<!--</form>-->
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Chỉnh Sửa Khách Hàng</h5>
+        <button type="button" class="btn-close" id="closeModalCreate" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <form [formGroup]="formTest" (ngSubmit)="submit()" class="modal-add">
+        <div>
+          <label>Tên Khách Hàng:
+            <input type="text" formControlName="name">
+          </label>
+        </div>
+<!--        -->
+        <div>
+          <label>Ngày Mở Sổ:
+            <input type="date" formControlName="ngayMoSo">
+          </label>
+        </div>
+<!--        -->
+        <div>
+          <label>Thời Gian Bắt Đầu Gửi:
+            <input type="date" formControlName="thoiGianGui">
+          </label>
+        </div>
+<!--        -->
+        <div>
+          <label>Kì Hạn:
+            <input type="date" formControlName="kiHan">
+          </label>
+        </div>
+<!--        -->
+        <div>
+          <label>Số Tiền Gửi:
+            <input type="date" formControlName="soTienGui">
+          </label>
+        </div>
+<!--        -->
+        <div>
+          <label>Lãi Suất:
+            <input type="date" formControlName="laiSuat">
+          </label>
+        </div>
+<!--        -->
+        <div>
+          <label>Ưu Đãi:
+            <input type="date" formControlName="uuDai">
+          </label>
+        </div>
+<!--        -->
+        <div>
+          <label>
+            <select style="width: 350px" class="form-control col-6" formControlName="customerType">-->
+              <option *ngFor="let type of testTypeList" [ngValue]="type.id" > {{type.maSoSo}}
+              </option>
+            </select>
+          </label>
+        </div>
+<!--      -->
+        <div class="form-group row mr-0 ml-0">
+          <button type="button" [routerLink]='' class="btn btn-secondary" (click)="close()">Close</button>
+          <button type="submit" [disabled]="testModuleForm.invalid" class="btn btn-primary">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

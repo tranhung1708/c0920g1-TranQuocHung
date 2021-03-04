@@ -1,0 +1,14 @@
+<table class="table table-dark">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>DayOFBirth</th>
+    <th>Address</th>
+  </tr>
+  <tr *ngFor="let cus of customerList">
+    <td>{{cus.id}}</td>
+    <td>{{cus.name}}</td>
+    <td>{{cus.dayOfBirth}}</td>
+    <td>{{cus.address}}</td>
+  </tr>
+</table>

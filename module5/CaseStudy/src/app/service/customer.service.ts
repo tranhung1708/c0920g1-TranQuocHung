@@ -40,7 +40,9 @@ export class CustomerService {
   searchByName(name: string) {
     return this.http.get(this.url + '?name_like=' + name);
   }
-
+  searchFullName(fullName: string) {
+    return this.http.get(this.url + '?q=' + fullName);
+  }
 
   getById(id: number): Observable<any> {
     return this.http.get(this.url + '/' + id);

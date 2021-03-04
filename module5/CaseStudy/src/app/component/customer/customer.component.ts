@@ -16,6 +16,7 @@ export class CustomerComponent implements OnInit {
   customerList: ICustomer[];
   name: string;
   p: any;
+  private searchFullName: string;
 
   constructor(private customerService: CustomerService, private modal: NgbModal) {
   }
@@ -37,8 +38,14 @@ export class CustomerComponent implements OnInit {
     }, error => console.log(error));
   }
 
-  search(name) {
-    this.customerService.searchByName(name).subscribe((data: ICustomer[]) => {
+  search() {
+    this.customerService.searchByName(this.name).subscribe((data: ICustomer[]) => {
+      this.customerList = data;
+    }, error => console.log(error));
+  }
+
+  searchFull() {
+    this.customerService.searchFullName(this.searchFullName).subscribe((data: ICustomer[]) => {
       this.customerList = data;
     }, error => console.log(error));
   }

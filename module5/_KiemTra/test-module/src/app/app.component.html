@@ -1,0 +1,42 @@
+
+<form>
+  <label>
+    <input style="width: 400px;
+      margin-left: 700px ;margin-bottom: 10px" class="form-control mr-sm-2" type="text"
+           placeholder="Tìm Kiếm Theo Tên Khách Hàng" [(ngModel)]="name" name="search1">
+  </label>
+  <button class="btn btn-outline-dark" type="button" (click)="search()">Search</button>
+</form>
+<table border="1" class="table table-danger">
+  <tr>
+    <th>Mã Khách Hàng</th>
+    <th>Tên Khách Hàng</th>
+    <th>Ngày Mở Sổ</th>
+    <th>Thời Gian Bắt Đầu Gửi</th>
+    <th>Kì Hạn</th>
+    <th>Số Tiền Gửi</th>
+    <th>Lãi Suất</th>
+    <th>Ưu Đãi</th>
+    <th>Mã Số Sổ</th>
+    <th colspan="2">Chức Năng</th>
+  </tr>
+  <tr *ngFor="let test of testList |paginate: { itemsPerPage: 2, currentPage: p }">
+    <td>{{test.id}}</td>
+    <td>{{test.name}}</td>
+    <td>{{test.ngayMoSo}}</td>
+    <td>{{test.thoiGianGui}}</td>
+    <td>{{test.kiHan}}</td>
+    <td>{{test.soTienGui}}</td>
+    <td>{{test.laiSuat}}</td>
+    <td>{{test.uuDai}}</td>
+    <td>{{test.testType.maSoSo}}</td>
+    <td>
+      <button type="button" (click)="createType(tesstModule)" class="btn btn-primary" data-toggle="modal" data-target="#modalCreate">
+       Chỉnh Sửa
+      </button>
+      <button type="submit" class="btn btn-danger">Edit</button>
+    </td>
+  </tr>
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+

@@ -33,6 +33,5 @@ export class CustomerDeleteComponent implements OnInit {
 
   close() {
     this.modal.dismissAll();
-
   }
 }
